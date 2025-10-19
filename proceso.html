@@ -34,7 +34,7 @@
                 <a href="bios.html">BIOS</a>
             </div>
             <div class="header_nav-div">
-                <img src="logs/mbr.png" alt="Logo MBR" class="nav_div-img">
+                <img src="logos/mbr.png" alt="Logo MBR" class="nav_div-img">
                 <a href="mbr.html">MBR</a>
             </div>
             <div class="header_nav-div">
@@ -61,8 +61,139 @@
                     <h3 class="elemento_contenido-titulo">
                         Fase 1: Autodiagnóstico de Encendido (POST)
                     </h3>
+                    <div class="elemento_contenido-contenido">
+                        <img src="imagenes/pantalla_post.webp" alt="Pantalla de POST de una BIOS">
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                Al aplicar tensión, la CPU se inicializa y su contador de programa (PC) se fija en una dirección de memoria predefinida. Esta dirección apunta a la <strong>ROM del firmware</strong> (BIOS o UEFI). La primera rutina ejecutada es el <strong>POST (Power-On Self-Test)</strong>, un diagnóstico crítico <em>in-place</em> que verifica la integridad del hardware esencial:
+                            </p>
+                            <ul>
+                                <li>Verificación de la CPU (registros, flags).</li>
+                                <li>Chequeo de la memoria RAM (detección y prueba básica de integridad).</li>
+                                <li>Inicialización del controlador de vídeo básico para mostrar salida.</li>
+                                <li>Detección de buses principales (PCI, PCIe).</li>
+                            </ul>
+                            <p>
+                                Un fallo fatal aquí resulta en una detención del sistema, comunicada a menudo mediante códigos de pitido (códigos POST).
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </li>
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Fase 2: Inicialización de Firmware y Selección de Dispositivo
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <img src="imagenes/orden_arranque.webp" alt="Menú de orden de arranque en UEFI">
+                        <div class="contenido_contenido-texto">
+                            <p>
+                               Superado el POST, el firmware inicializa los controladores de bajo nivel y enumera los dispositivos. A continuación, consulta su configuración almacenada en memoria no volátil (<strong>NVRAM</strong>, antiguamente CMOS) para determinar la <strong>secuencia de arranque</strong> (Boot Priority). Esta secuencia ordenada (ej. 1. SSD NVMe, 2. USB, 3. Red PXE) le indica al firmware dónde debe buscar el código de arranque ejecutable. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Fase 3: Carga del Código de Arranque (La bifurcación MBR vs. UEFI)
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <img src="imagenes/uefi_bios.webp" alt="Comparación BIOS vs UEFI">
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                Este es el punto de divergencia fundamental entre el arranque tradicional y el moderno:
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Modo Legacy (BIOS/MBR):</strong> La BIOS lee el primer sector lógico (Sector 0, de 512 bytes) del dispositivo seleccionado. Este es el <strong>Master Boot Record (MBR)</strong>. La BIOS carga estos 512 bytes en la dirección de memoria física `0x7C00` y transfiere el control de la CPU (ejecuta un `JMP 0x7C00`). Este minúsculo código (Stage 1) debe localizar y cargar la siguiente etapa (Stage 2) del gestor de arranque.
+                                </li>
+                                <li>
+                                    <strong>Modo Moderno (UEFI/GPT):</strong> La UEFI, que actúa como un micro-SO, posee controladores para sistemas de archivos (ej. FAT32). No lee un sector fijo, sino que busca una partición específica marcada con un GUID único: la <strong>EFI System Partition (ESP)</strong>. Dentro de la ESP, navega por un directorio y ejecuta un archivo binario EFI (ej. `\EFI\BOOT\BOOTX64.EFI` o `\EFI\Microsoft\Boot\bootmgfw.efi`).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Fase 4: Ejecución del Gestor de Arranque (Stage 2)
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <img src="imagenes/menu_grub.webp" alt="Menú del gestor de arranque GRUB 2">
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                El control ahora reside en el gestor de arranque principal (ej. GRUB2, systemd-boot, o Windows Boot Manager), que ya está cargado en RAM. Este software es significativamente más complejo:
+                            </p>
+                            <ol>
+                                <li>Interpreta su propio archivo de configuración (ej. `grub.cfg`).</li>
+                                <li>Tiene capacidad para leer múltiples sistemas de archivos (ext4, NTFS, Btrfs).</li>
+                                <li>Presenta un menú interactivo al usuario si hay múltiples sistemas operativos o kernels.</li>
+                                <li>Localiza la imagen del kernel y el disco RAM inicial (initrd) en el sistema de archivos.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Fase 5: Carga del Kernel y el Disco RAM Inicial (initrd)
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <img src="imagenes/initrd.webp" alt="Esquema de carga del Kernel e Initrd">
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                Una vez el usuario selecciona una entrada (o por defecto), el gestor de arranque carga dos artefactos esenciales en la memoria RAM:
+                            </p>
+                            <ul>
+                                <li><strong>El Kernel:</strong> La imagen del núcleo del sistema operativo (ej. `vmlinuz` en Linux). Es el corazón del SO, responsable de la gestión de memoria, procesos y hardware.</li>
+                                <li><strong>El `initrd` (initial ramdisk):</strong> Un archivo (ej. `initramfs.img`) que contiene un sistema de archivos raíz temporal. Su propósito es crucial: contiene los módulos y controladores (ej. para NVMe, LVM, RAID o LUKS) que el kernel necesita para poder <em>montar</em> el sistema de archivos raíz real, que de otro modo sería inaccesible.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li> 
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Fase 6: Inicialización del Kernel y Montaje del Raíz Real
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <img src="imagenes/mensajes_kernel.webp" alt="Inicialización del Kernel">
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                El gestor de arranque cede el control de la CPU al kernel, pasándole la ubicación del `initrd`. El kernel se descomprime a sí mismo, se inicializa (configurando la gestión de memoria, interrupciones, etc.) y monta el `initrd` como su sistema raíz (`/`) temporal.
+                            </p>
+                            <p>
+                                Desde este entorno temporal, el kernel carga los módulos del `initrd` (ej. `nvme.ko`), detecta el disco duro real, y ejecuta un script que monta el sistema de archivos raíz <em>permanente</em> (definido por el parámetro `root=UUID=...`). Finalmente, utiliza la llamada al sistema `pivot_root` (o `switch_root`) para descartar el `initrd` y adoptar el sistema de archivos permanente como su nuevo `/`.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>   
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Fase 7: Ejecución del Proceso `init` (Espacio de Usuario)
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <img src="imagenes/arbol_procesos.webp" alt="Árbol de procesos de Systemd">
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                Con el sistema de archivos real montado, el kernel ha completado su arranque. Su última tarea es ejecutar el primer proceso del <strong>espacio de usuario</strong>: el proceso con <strong>PID 1</strong>.
+                            </p>
+                            <p>
+                                En sistemas Linux modernos, este es `systemd` (o `init` en sistemas SysV). Este proceso (que ya <em>no</em> es el kernel) se convierte en el padre de todos los demás procesos del sistema. Lee su propia configuración (ej. los 'targets' y 'services' de systemd) e inicia, a menudo en paralelo, todos los demonios del sistema, servicios de red, montaje de sistemas de archivos secundarios y, finalmente, el entorno gráfico y el gestor de inicio de sesión (Login Manager), presentando la pantalla de bienvenida al usuario.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>        
         </ol>
     </main>
     <footer class="footer">
