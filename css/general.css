@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+	--FuentePrincipal: "Roboto", sans-serif;
+    --AzulSuave: #BBDBFF;
+    --AzulOscuro: #175EF9;
+    --AzulMuyOscuro: #151f40;
+    --AzulIntermedio: #55A4FF;
+}
+html{
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+*,*:before,*:after{
+	box-sizing: inherit;
+}
+body{
+	font-size: 16px;
+    font-family: var(--FuentePrincipal);
+    margin: 0;
+}
+
+/*GENERALES*/
+a{
+    text-decoration: none;
+    color: black;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/*NAV*/
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2.5rem;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+}
+.nav_div:first-of-type{
+    margin-right: 5rem;
+    padding: 1rem;
+    background: linear-gradient(200deg, var(--AzulIntermedio) 50%, var(--AzulOscuro) 100%);
+    border-radius: 1rem;
+}
+.nav_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.nav_div-img{
+    width: 2rem;
+}
+.nav_div-imgp{
+    width: 4rem;
+    filter: invert();
+}
+.nav_div > a{
+    font-weight: 400;
+}
+
+/*HEADER*/
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 7rem;
+    background-color: var(--AzulMuyOscuro);
+    color: white;
+    gap: 8rem;
+}
+.header_i{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+    align-items: flex-start;
+}
+.header_i-h1{
+    font-size: 4rem;
+}
+.header_i-h1 > span{
+    color: var(--AzulIntermedio);
+}
+.header_i-p{
+    font-size: 1.8rem;
+    text-align: left;
+}
+.header_i-p > span{
+    color: var(--AzulIntermedio);
+}
+.header_d > img{
+    max-width: 45rem;
+    border-radius: 2rem;
+}
+
+/*MAIN*/
+.main{
+
+}
+.main_intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem;
+    width: 100%;
+}
+.main_intro-titulo{
+    font-size: 3rem;
+}
+.main_intro-texto{
+    font-size: 1.8rem;
+    max-width: 70%;
+    text-align: center;
+}
+.main_intro-lista{
+    display: flex;
+}
