@@ -1,0 +1,37 @@
+body{
+    background-color: var(--GrisClaro);
+}
+.main{
+    width: 65vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.main_intro{
+    width: 100%;
+}
+.main_intro-titulo{
+    text-align: center;
+    font-size: 2.75rem;
+    margin: 5rem 0;
+}
+.main_texto-lista{
+    padding-left: 5rem;
+    list-style-type: square;
+}
+.main_comparativa{
+    width: 100%;
+}
+.main_comparativa-lista{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+.comparativa_li-subtitulo{
+    text-align: center;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="Proyecto Arranque PC">
+    <meta name="description" content="Explicación del MBR: Comparativa con GPT">
+    <meta name="keywords" content="BIOS, MBR, GPT, informática, boot, UEFI">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="es">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css"> 
+    <link rel="stylesheet" type="text/css" href="css/mbr.css"> 
+
+    <title>MBR: Registro de arranque principal</title>
+
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_div">
+        <img src="logos/principal2.png" alt="Logo Principal" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Inicio" class="nav_div-img">
+            <a href="index.html">Inicio</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Logo Proceso" class="nav_div-img">
+            <a href="proceso.html">Proceso</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="Logo ROM" class="nav_div-img">
+            <a href="rom.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="Logo BIOS" class="nav_div-img">
+            <a href="bios.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="Logo MBR" class="nav_div-img">
+            <a href="mbr.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="Logo EFI" class="nav_div-img">
+            <a href="efi.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Logo Comparativa" class="nav_div-img">
+            <a href="comparativa.html">Comparativa</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Logo Curiosidades" class="nav_div-img">
+            <a href="curiosidades.html">Curiosidades</a>
+        </div>
+    </nav>
+    <main class="main">
+        <section class="main_intro">
+            <div class="main_intro-div">
+                <h2 class="main_intro-titulo">MBR: Registro de arranque principal</h2>
+                <p class="main_intro-texto">
+                    El MBR es el primer sector físico de un dispositivo de almacenamiento de datos que arranca el ordenador, esto lo hace a través de la BIOS. <br>
+                    En los dispositivos de almacenamiento que contienen los datos para el proceso de arranque, a las particiones se les asigna un máximo de 2TB, esto se debe a las limitaciones del momento. Su dirección específica en el sector del disco es Cilindro 0, Cabeza 0, Sector 1. <br>
+                    Para el proceso de arranque, MBR consta de tres partes: el código de arranque maestro, la tabla de partición maestra, y la firma del disco.<br>
+                </p>
+                <p class="main_intro-tareas"> 
+                Las tareas de la MBR se pueden dividir en 3 partes: <br>
+                    <ul class="main_texto-lista">
+                        <li class="texto_li">
+                             <p>
+                                La BIOS busca un dispositivo de destino para arrancar el MBR cuando un ordenador se enciende por primera vez.
+                            </p>
+                        </li>
+                        <li class="texto_li">
+                            <p>
+                                El código de arranque MBR lee la tabla de particiones e identifica la partición “activa”.
+                            </p>
+                        </li>
+                        <li class="texto_li">
+                            <p>
+                                Utiliza el sector de arranque de esa partición para iniciar el sistema operativo.
+                            </p>
+                        </li class="texto_li">
+                    </ul>
+                </p>
+            </div>
+        </section>
+        <section class="main_visual">
+            <div class="main_visual-div">
+                <img src="imagenes/MBRvisual.webp" alt="MBR" class="main_visual-img">
+            </div>
+        </section>
+        <section class="main_comparativa">
+            <h2 class="main_comparativa-titulo">MBR vs GPT</h2>
+            <p class="main_comparativa-texto">
+                GPT (Tabla de partición GUID) es la forma de tablas de particiones moderna, que acaba con algunas de las limitaciones de MBR.
+            </p>
+            <ul class="main_comparativa-lista">
+                <li class="comparativa_li"> 
+                    <h3 class="comparativa_li-subtitulo"> MBR</h3>
+                    <ul class="comparativa_caracteristicas-mbr">
+                        <li class="caracteristicas_li-mbr"> 
+                            Máximo de 4 particiones primarias, tamaño máximo de 2TB por disco.
+                        </li>
+                        <li class="caracteristicas_li-mbr"> 
+                            Compatible con sistemas operativos antiguos y BIOS.
+                        </li>
+                        <li class="caracteristicas_li-mbr"> 
+                            Adecuado para discos de como máximo 2TB y sistemas sin UEFI.
+                        </li>
+                    </ul>
+                </li>
+                <li class="comparativa_li">
+                    <h3 class="comparativa_li-subtitulo"> GPT</h3>
+                    <ul class="comparativa_caracteristicas-gpt">
+                        <li class="caracteristicas_li-gpt"> 
+                            Admite un número ilimitado de particiones, sin límite de 2TB.                        
+                        </li>
+                        <li class="caracteristicas_li-gpt"> 
+                            Optimizado para sistemas UEFI.
+                        </li>
+                        <li class="caracteristicas_li-gpt"> 
+                            Adecuado para discos de más de 2 TB y para mayor capacidad y flexibilidad.
+                        </li>
+                    </ul>
+                </li>
+        </ul>
+    </main>
+    <footer class="footer">
+        <section class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        ¿Quiénes somos?
+                    </li>
+                    <li>
+                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
+                        dedicados a explorar y explicar el fascinante proceso de arranque de los ordenadores. <br>
+                        Nuestro objetivo es compartir conocimientos y hacer que la tecnología sea accesible para todos.
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Recursos
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Equipo
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </section>
+        <hr>
+        <section class="footer_derechos">
+            © 2025 Todos los derechos reservados.
+        </section>
+    </footer>
+</body>
+</html>

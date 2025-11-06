@@ -1,0 +1,57 @@
+body{
+    background-color: var(--GrisClaro);
+}
+/*HEADER*/
+.header{
+    width: 100%;
+    padding: 8rem 0;
+    background-color: var(--AzulMuyOscuro);
+}
+.header_intro{
+    width: 50vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8rem;
+    color: white;
+}
+.header_intro-titulo{
+    font-size: 5rem;
+}
+.header_intro-subtitulo{
+    font-size: 3.5rem;
+}
+/*MAIN*/
+.main{
+    width: 65vw;
+    margin: auto;
+}
+.main_conceptos-titulo{
+    text-align: center;
+    font-size: 2.75rem;
+    margin: 5rem 0;
+}
+.conceptos_li-lista{
+    padding-left: 5rem;
+    list-style-type: upper-roman;
+}
+.main_comparacion-lista{
+    display: flex;
+    flex-direction: column;
+}
+.main_comparacion-subtitulo{
+    text-align: center;
+    font-size: 2rem;
+}
+.main_comparacion-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+.main_comparacion-img > img{
+    width: 80rem;
+    border-radius: 1rem;
+}
