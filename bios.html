@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="Proyecto Arranque PC">
+    <meta name="description" content="Explicación de la BIOS: POST, configuración y orden de arranque.">
+    <meta name="keywords" content="BIOS, POST, configuración, orden de arranque, informática, boot, UEFI">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="es">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css"> 
+    <link rel="stylesheet" type="text/css" href="css/bios.css"> 
+
+    <title>BIOS: Firmware de la placa base</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_div">
+        <img src="logos/principal2.png" alt="Logo Principal" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Inicio" class="nav_div-img">
+            <a href="index.html">Inicio</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Logo Proceso" class="nav_div-img">
+            <a href="proceso.html">Proceso</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="Logo ROM" class="nav_div-img">
+            <a href="rom.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="Logo BIOS" class="nav_div-img">
+            <a href="bios.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="Logo MBR" class="nav_div-img">
+            <a href="mbr.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="Logo EFI" class="nav_div-img">
+            <a href="efi.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Logo Comparativa" class="nav_div-img">
+            <a href="comparativa.html">Comparativa</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Logo Curiosidades" class="nav_div-img">
+            <a href="curiosidades.html">Curiosidades</a>
+        </div>
+    </nav>
+    <header class="header">
+        <section class="header_intro">
+            <div class="header_intro-div">
+                <h2 class="header_intro-titulo">¿Qué es la BIOS?</h2>
+                <p class="header_intro-texto">
+                    La BIOS o Sistema Básico de Entrada-Salida es el software que primero se ejecuta el encender un ordenador. Constituye una serie de procesos automatizados que verifica los componentes del sistema y permitir que el arranque continue.  <br> En esencia, es una secuencia de códigos de ejecución almacenada en un chip de la placa base que permite reconocer qué componentes están conectados. </p>
+            </div>
+            <div class="header_intro-div">
+                <h2 class="header_intro-subtitulo"> ¿Que función tiene?</h2>
+                <p class="header_intro-texto">
+                    La BIOS sirve para que todos los componentes se conecten a la placa base a través de software y así queden enlazados. Al enlazarse se establecen las instrucciones que se usan hasta que el ordenador se vuelve a encender. 
+                </p>
+            </div>
+        </section>
+    </header>
+    <main class="main">
+        <section class="main_conceptos">
+            <h2 class="main_conceptos-titulo">Conceptos clave de la BIOS</h2>
+            <ul class="main_conceptos-lista">
+                <li class="conceptos_li"> 
+                    <h3 class="conceptos_li-subtitulo"> POST: Power-On Self Test</h3>
+                    <p class="conceptos_li-texto">
+                        Una de las funciones que realiza la BIOS es el POST es una serie de diagnóstico que sirven verificar que el hardware del ordenador esté funcionando correctamente antes de cargar el sistema operativo. <br>
+                        Este proceso verifica los componentes de entrada y salida, y se encarga de configurar y diagnosticar el estado del hardware. Si en este proceso algo falla, el ordenador no se encenderá dando un error. <br>
+                        Generalmente este proceso no es visible en la mayoría de arranques, pero puede ser activado para detectar posibles errores. 
+                    </p>
+                </li>
+                <li class="conceptos_li">
+                    <h3 class="conceptos_li-subtitulo"> Configuración de la BIOS</h3>
+                    <p class="conceptos_li-texto">
+                        Para configurar la BIOS depende del ordenador habrá que usar unas teclas u otras al encender el ordenador. Esto nos llevara a una interfaz, que actualmente es la UEFI, un nuevo sistema que tiene algunas diferencias con la BIOS pero que desempeña un trabajo parecido. 
+                        Entre otras cosas, se puede configurar la fecha y hora del sistema, el orden de arranque, las opciones de seguridad, etc.
+                    </p>
+                </li>
+                <li class="conceptos_li">
+                    <h3 class="conceptos_li-subtitulo"> Orden de arranque</h3>
+                    <p class="conceptos_li-texto">
+                    El orden de arranque es una opción configurable de la BIOS y determina el orden en que se controlan los dispositivos desde los que se inicia el equipo, es decir, un disco duro, un USB, un disco óptico... <br>
+                    El orden predeterminado de UEFI es:
+                        <ul class="conceptos_li-lista">
+                            <li class="conceptos_li-item"> Administrador de arranque del sistema operativo</li>
+                            <li class="conceptos_li-item"> Unidad USB</li>
+                            <li class="conceptos_li-item"> Unidad USB CD o DVD</li>
+                            <li class="conceptos_li-item"> Adaptador de red</li>
+                        </ul>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="main_comparacion">
+            <ul class="main_comparacion-lista">
+                <li class="main_comparacion-li">
+                    <h3 class="main_comparacion-subtitulo"> Legacy</h3>
+                    <div class="main_comparacion-img">
+                        <img src="imagenes/legacy.webp" alt="Bios Legacy">
+                    </div>
+                    <h3 class="main_comparacion-subtitulo"> UEFI</h3>
+                    <div class="main_comparacion-img">
+                        <img src="imagenes/uefi.webp" alt="Bios UEFI">
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        ¿Quiénes somos?
+                    </li>
+                    <li>
+                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
+                        dedicados a explorar y explicar el fascinante proceso de arranque de los ordenadores. <br>
+                        Nuestro objetivo es compartir conocimientos y hacer que la tecnología sea accesible para todos.
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Recursos
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Equipo
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </section>
+        <hr>
+        <section class="footer_derechos">
+            © 2025 Todos los derechos reservados.
+        </section>
+    </footer>
+</body>
+</html>

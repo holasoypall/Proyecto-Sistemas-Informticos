@@ -1,0 +1,107 @@
+body{
+    background-color: var(--GrisClaro);
+}
+/*HEADER*/
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 7rem;
+    background-color: var(--AzulMuyOscuro);
+    color: white;
+    gap: 8rem;
+    height: 80vh;
+}
+.header_i{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10vh;
+    align-items: flex-start;
+    min-width: 30vw;
+}
+.header_i-h1{
+    font-size: 4rem;
+}
+.header_i-h1 > span{
+    color: var(--AzulIntermedio);
+}
+.header_i-p{
+    font-size: 1.8rem;
+    text-align: left;
+}
+.header_i-p > span{
+    color: var(--AzulIntermedio);
+}
+.header_d > img{
+    max-width: 40em;
+    border-radius: 2rem;
+}
+
+/*MAIN*/
+.main_intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem;
+    width: 100%;
+    
+}
+.main_intro-titulo{
+    font-size: 3rem;
+}
+.main_intro-texto{
+    font-size: 1.8rem;
+    max-width: 70%;
+    text-align: center;
+}
+.main_intro-lista{
+    display: flex;
+    gap: 8em;
+    margin: 0 2rem;
+    margin-top: 5rem;
+    
+}
+.intro_lista-li{
+    padding: 4rem;
+    max-width: 25em;
+    border-radius: 3rem;
+    box-shadow: -10px 11px 18px -5px rgba(148,148,148,0.5);
+}
+.lista_li-contenedor{
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.lista_li-contenedor > img{
+    width: 4.5rem;
+    filter: invert();
+}
+.lista_li-texto{
+    color: var(--GrisOscuro);
+}
+#el3{
+    position: relative;
+    top: .2em;
+    left: .15em;
+}
+.intro_lista-li:nth-child(1) > .lista_li-contenedor{
+    background-color: var(--Rosa);
+}
+.intro_lista-li:nth-of-type(1){
+    background-color: var(--RosaClaro);
+}
+.intro_lista-li:nth-child(2) > .lista_li-contenedor{
+    background-color: var(--Verde);
+}
+.intro_lista-li:nth-of-type(2){
+    background-color: var(--VerdeClaro);
+}
+.intro_lista-li:nth-child(3) > .lista_li-contenedor{
+    background-color: var(--AzulVerde);
+}
+.intro_lista-li:nth-of-type(3){
+    background-color: var(--AzulverdeClaro);
+}

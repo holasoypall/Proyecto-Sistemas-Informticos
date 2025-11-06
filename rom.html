@@ -9,57 +9,124 @@
     <meta name="author" content="Oihan, Adrián, Pablo">
     <meta name="creator" content="Oihan, Adrián, Pablo">
     <meta name="language" content="es">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/rom.css">
+
     <title>Encendido del Sistema Operativo</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="header_nav">
-            <div class="header_nav-div">
-                <img src="logos/principal1.png" alt="Logo Principal">
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/casa.png" alt="Inicio" class="nav_div-img">
-                <a href="index.html">Inicio</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/proceso.png" alt="Logo Proceso" class="nav_div-img">
-                <a href="proceso.html">Proceso</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/rom.png" alt="Logo ROM" class="nav_div-img">
-                <a href="rom.html">ROM</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/bios.png" alt="Logo BIOS" class="nav_div-img">
-                <a href="bios.html">BIOS</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/mbr.png" alt="Logo MBR" class="nav_div-img">
-                <a href="mbr.html">MBR</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/efi.png" alt="Logo EFI" class="nav_div-img">
-                <a href="efi.html">EFI</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/comparativa.png" alt="Logo Comparativa" class="nav_div-img">
-                <a href="comparativa.html">Comparativa</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/curiosidades.png" alt="Logo Curiosidades" class="nav_div-img">
-                <a href="curiosidades.html">Curiosidades</a>
-            </div>
-        </nav>
-    </header>
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Logo Principal" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Inicio" class="nav_div-img">
+            <a href="index.html">Inicio</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Logo Proceso" class="nav_div-img">
+            <a href="proceso.html">Proceso</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="Logo ROM" class="nav_div-img">
+            <a href="rom.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="Logo BIOS" class="nav_div-img">
+            <a href="bios.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="Logo MBR" class="nav_div-img">
+            <a href="mbr.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="Logo EFI" class="nav_div-img">
+            <a href="efi.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Logo Comparativa" class="nav_div-img">
+            <a href="comparativa.html">Comparativa</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Logo Curiosidades" class="nav_div-img">
+            <a href="curiosidades.html">Curiosidades</a>
+        </div>
+    </nav>
     <main class="main">
-        
+        <h1 class="main_titulo">ROM: Read-Only Memory</h1>
+        <section class="main_i">
+            <p>
+                ROM son las siglas de Read-Only Memory (Memoria de Solo Lectura). Es un tipo de almacenamiento que se caracteriza por ser no volátil. Esto significa que la información guardada en ella no se borra cuando apagas el dispositivo; los datos siguen guardados.
+                <br>
+                La función esencial de la ROM es mantener almacenado el firmware o el software de arranque (como la BIOS o UEFI en un ordenador). Este es el conjunto de ordenes que le dicen al hardware cómo iniciar el sistema operativo cuando enciendes el ordenador.
+                <br>
+                Podemos pensar en la ROM como el manual de instrucciones permanente del ordenador.
+            </p>
+            <h3>Historia de la ROM</h3>
+            <ul>
+                <li>1950-60: Núcleos Cabelados (Manual)</li>
+                <li>1970 (inicio): MROM (De fábrica)</li>
+                <li>1970 (final): EPROM (Borrable con UV)</li>
+                <li>1980-90: EEPROM (Borrable eléctricamente)</li>
+                <li>Actualidad: Memoria Flash (Rápida y flexible)</li>
+            </ul>
+            <h3 class="main_i-importante">IMPORTANTE ! ! !</h3>
+            <p>
+                Es fundamental no confundir la ROM con la <strong>RAM</strong> (Random-Access Memory).
+                <ul>
+                    <li>
+                    <strong>La ROM es el "cerebro permanente":</strong> Almacena las instrucciones que <em>nunca</em> cambian.
+                    </li>
+                    <li>
+                    <strong>La RAM es la "mesa temporal":</strong> Almacena programas y archivos que estás usando <em>en tiempo real</em>. Es volátil (se borra al apagar) y es tanto de lectura como de escritura.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Cuando enciendes el ordenador, la CPU (el procesador) está diseñada para hacer una sola cosa: encontrar una instrucción en una dirección de memoria concreta. Esta dirección mira <strong>directamente</strong> al chip de la ROM.
+                <br>
+                La ROM toma el control y le entrega a la CPU el <strong>POST (Power-On Self-Test)</strong>, un mini programa que supervisa al hardware básico para que esté presente y funcione. Si todo está bien, la ROM cede el control al siguiente paso, es decir, la BIOS o UEFI.
+            </p>
+            <p>
+                Aunque aquí hablamos del arranque del PC, la ROM está en casi cualquier dispositivo, un microondas, un coche, la impresora...
+            </p>
+        </section>
+        <aside class="main_d">
+            <h3>Tipos Comunes de ROM</h3>
+            <ul>
+                <li><strong>MROM (Mask ROM): </strong> <br> La ROM "pura". Los datos se graban en la fábrica durante la fabricación del chip. Es imposible de modificar.</li>
+                <li><strong>RPOM (Programmable ROM): </strong> <br> Se fabrica "en blanco" y puede ser programada una sola vez por un usuario con un dispositivo especial.</li>
+                <li><strong>EPROM (Erasable Programmable ROM): </strong> <br> Se puede borrar exponiéndola a una fuerte luz ultravioleta y luego reprogramarla.</li>
+                <li><strong>EEPROM (Electrically Erasable Prog. ROM): </strong> <br> La más moderna. Se puede borrar y reprogramar eléctricamente, sin sacarla del circuito.</li>
+            </ul>
+        </aside>
+        <article class="main_debajo">
+            <div class="main_debajo-img">
+                <img src="imagenes/rom_esquema.webp" alt="Esquema eléctrico ROM">
+            </div>
+            <hr>
+            <p>
+                Esquema de ejecución ROM
+            </p>
+        </article>
     </main>
     <footer class="footer">
         <section class="footer_contenido">
             <div class="footer_contenido-i">
-                <img src="logos/principal1.png" alt="Logo Principal">
+                <img src="logos/principal2.png" alt="Logo Principal">
             </div>
             <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        ¿Quiénes somos?
+                    </li>
+                    <li>
+                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
+                        dedicados a explorar y explicar el fascinante proceso de arranque de los ordenadores. <br>
+                        Nuestro objetivo es compartir conocimientos y hacer que la tecnología sea accesible para todos.
+                    </li>
+                </ul>
                 <ul class="contenido_d-bloque">
                     <li class="d_bloque-titulo">
                         Recursos

@@ -9,51 +9,53 @@
     <meta name="author" content="Oihan, Adrián, Pablo">
     <meta name="creator" content="Oihan, Adrián, Pablo">
     <meta name="language" content="es">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/proceso.css">
+
     <title>Encendido del Sistema Operativo</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="header_nav">
-            <div class="header_nav-div">
-                <img src="logos/principal1.png" alt="Logo Principal">
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/casa.png" alt="Inicio" class="nav_div-img">
-                <a href="index.html">Inicio</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/proceso.png" alt="Logo Proceso" class="nav_div-img">
-                <a href="proceso.html">Proceso</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/rom.png" alt="Logo ROM" class="nav_div-img">
-                <a href="rom.html">ROM</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/bios.png" alt="Logo BIOS" class="nav_div-img">
-                <a href="bios.html">BIOS</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/mbr.png" alt="Logo MBR" class="nav_div-img">
-                <a href="mbr.html">MBR</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/efi.png" alt="Logo EFI" class="nav_div-img">
-                <a href="efi.html">EFI</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/comparativa.png" alt="Logo Comparativa" class="nav_div-img">
-                <a href="comparativa.html">Comparativa</a>
-            </div>
-            <div class="header_nav-div">
-                <img src="logos/curiosidades.png" alt="Logo Curiosidades" class="nav_div-img">
-                <a href="curiosidades.html">Curiosidades</a>
-            </div>
-        </nav>
-    </header>
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Logo Principal" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Inicio" class="nav_div-img">
+            <a href="index.html">Inicio</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Logo Proceso" class="nav_div-img">
+            <a href="proceso.html">Proceso</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="Logo ROM" class="nav_div-img">
+            <a href="rom.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="Logo BIOS" class="nav_div-img">
+            <a href="bios.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="Logo MBR" class="nav_div-img">
+            <a href="mbr.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="Logo EFI" class="nav_div-img">
+            <a href="efi.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Logo Comparativa" class="nav_div-img">
+            <a href="comparativa.html">Comparativa</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Logo Curiosidades" class="nav_div-img">
+            <a href="curiosidades.html">Curiosidades</a>
+        </div>
+    </nav>
     <main class="main">
         <h1 class="main_titulo">
-            De Cero al Sistema Operativo
+            El Viaje: De Cero al Sistema Operativo
         </h1>
         <ol class="main_lt">
             <li class="main_lt-elemento">
@@ -62,19 +64,21 @@
                         Fase 1: Autodiagnóstico de Encendido (POST)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <img src="imagenes/pantalla_post.webp" alt="Pantalla de POST de una BIOS">
+                        <div class="contenido_contenido-imagen" data="Pantalla de POST de una BIOS">
+                            <img src="imagenes/pantalla_post.webp" alt="Pantalla de POST de una BIOS">
+                        </div>
                         <div class="contenido_contenido-texto">
                             <p>
-                                Al aplicar tensión, la CPU se inicializa y su contador de programa (PC) se fija en una dirección de memoria predefinida. Esta dirección apunta a la <strong>ROM del firmware</strong> (BIOS o UEFI). La primera rutina ejecutada es el <strong>POST (Power-On Self-Test)</strong>, un diagnóstico crítico <em>in-place</em> que verifica la integridad del hardware esencial:
+                                En cuanto entra electricidad, la CPU se inicializa y su contador de programa (PC) se fija en una dirección de memoria anteriormente establecida. Esta dirección mira hacia la <strong>ROM del firmware</strong> (BIOS o UEFI). La primera orden ejecutada es el <strong>POST (Power-On Self-Test)</strong>, que es un diagnóstico <em>in-place</em> que comprueba si el hardware importante está correcto:
                             </p>
                             <ul>
-                                <li>Verificación de la CPU (registros, flags).</li>
-                                <li>Chequeo de la memoria RAM (detección y prueba básica de integridad).</li>
-                                <li>Inicialización del controlador de vídeo básico para mostrar salida.</li>
-                                <li>Detección de buses principales (PCI, PCIe).</li>
+                                <li>Comprobación de la CPU (registros, flags).</li>
+                                <li>Comprobación de la memoria RAM (detección y prueba básica de integridad).</li>
+                                <li>Muestra la salida.</li>
+                                <li>Comprobación de buses principales (PCI, PCIe).</li>
                             </ul>
                             <p>
-                                Un fallo fatal aquí resulta en una detención del sistema, comunicada a menudo mediante códigos de pitido (códigos POST).
+                                Un error en esta secuencia probocará que no arranque el ordenador, está será comunicada con pitidos (códigos POST).
                             </p>
                         </div>
                     </div>
@@ -86,10 +90,12 @@
                         Fase 2: Inicialización de Firmware y Selección de Dispositivo
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <img src="imagenes/orden_arranque.webp" alt="Menú de orden de arranque en UEFI">
+                        <div class="contenido_contenido-imagen" data="Menú de orden de arranque en UEFI">
+                            <img src="imagenes/orden_arranque.webp" alt="Menú de orden de arranque en UEFI">
+                        </div>
                         <div class="contenido_contenido-texto">
                             <p>
-                               Superado el POST, el firmware inicializa los controladores de bajo nivel y enumera los dispositivos. A continuación, consulta su configuración almacenada en memoria no volátil (<strong>NVRAM</strong>, antiguamente CMOS) para determinar la <strong>secuencia de arranque</strong> (Boot Priority). Esta secuencia ordenada (ej. 1. SSD NVMe, 2. USB, 3. Red PXE) le indica al firmware dónde debe buscar el código de arranque ejecutable. 
+                               Una vez pasado el POST, el firmware inicializa controladores de bajo nivel y muestra los dispositivos. Después, mira la configuración en memorias no volátiles (<strong>NVRAM</strong>, antiguamente CMOS) para determinar la <strong>secuencia de arranque</strong> (Boot Priority). La secuencia ordenada (ej. 1. SSD NVMe, 2. USB, 3. Red PXE) le dice al firmware dónde tiene buscar el código de arranque. 
                             </p>
                         </div>
                     </div>
@@ -101,17 +107,19 @@
                         Fase 3: Carga del Código de Arranque (La bifurcación MBR vs. UEFI)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <img src="imagenes/uefi_bios.webp" alt="Comparación BIOS vs UEFI">
+                        <div class="contenido_contenido-imagen" data="Comparación BIOS vs UEFI">
+                            <img src="imagenes/uefi_bios.webp" alt="Comparación BIOS vs UEFI">
+                        </div>
                         <div class="contenido_contenido-texto">
                             <p>
-                                Este es el punto de divergencia fundamental entre el arranque tradicional y el moderno:
+                                Este es el punto en el que se diferencia entre el arranque tradicional y el moderno:
                             </p>
                             <ul>
                                 <li>
-                                    <strong>Modo Legacy (BIOS/MBR):</strong> La BIOS lee el primer sector lógico (Sector 0, de 512 bytes) del dispositivo seleccionado. Este es el <strong>Master Boot Record (MBR)</strong>. La BIOS carga estos 512 bytes en la dirección de memoria física `0x7C00` y transfiere el control de la CPU (ejecuta un `JMP 0x7C00`). Este minúsculo código (Stage 1) debe localizar y cargar la siguiente etapa (Stage 2) del gestor de arranque.
+                                    <strong>Modo Legacy (BIOS/MBR):</strong> La BIOS lee el primer sector lógico (Sector 0, de 512 bytes) del <strong>Master Boot Record (MBR)</strong>. La BIOS carga estos 512 bytes en una dirección de memoria física y mueve el control de la CPU. Esta acción carga la siguiente etapa del gestor de arranque.
                                 </li>
                                 <li>
-                                    <strong>Modo Moderno (UEFI/GPT):</strong> La UEFI, que actúa como un micro-SO, posee controladores para sistemas de archivos (ej. FAT32). No lee un sector fijo, sino que busca una partición específica marcada con un GUID único: la <strong>EFI System Partition (ESP)</strong>. Dentro de la ESP, navega por un directorio y ejecuta un archivo binario EFI (ej. `\EFI\BOOT\BOOTX64.EFI` o `\EFI\Microsoft\Boot\bootmgfw.efi`).
+                                    <strong>Modo Moderno (UEFI/GPT):</strong> La UEFI actuando como un mini sistema operativo, tiene la capacidad de trabajar con archivos (ej. FAT32). No lee un sector fijo, sino que busca una partición en concreto llamada GUID: la <strong>EFI System Partition (ESP)</strong>. Dentro de la ESP, navega por un directorio y ejecuta un archivo EFI.
                                 </li>
                             </ul>
                         </div>
@@ -124,16 +132,18 @@
                         Fase 4: Ejecución del Gestor de Arranque (Stage 2)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <img src="imagenes/menu_grub.webp" alt="Menú del gestor de arranque GRUB 2">
+                        <div class="contenido_contenido-imagen" data="Menú del gestor de arranque GRUB 2">
+                            <img src="imagenes/menu_grub.webp" alt="Menú del gestor de arranque GRUB 2">
+                        </div>
                         <div class="contenido_contenido-texto">
                             <p>
-                                El control ahora reside en el gestor de arranque principal (ej. GRUB2, systemd-boot, o Windows Boot Manager), que ya está cargado en RAM. Este software es significativamente más complejo:
+                                Ahora estamos en la etapad del gestor de arranque principal como por ejemplo GRUB2, o Windows Boot Manager, que ya está cargado en la RAM. Este software es un poco más complejo:
                             </p>
                             <ol>
-                                <li>Interpreta su propio archivo de configuración (ej. `grub.cfg`).</li>
-                                <li>Tiene capacidad para leer múltiples sistemas de archivos (ext4, NTFS, Btrfs).</li>
-                                <li>Presenta un menú interactivo al usuario si hay múltiples sistemas operativos o kernels.</li>
-                                <li>Localiza la imagen del kernel y el disco RAM inicial (initrd) en el sistema de archivos.</li>
+                                <li>Interpreta su propio archivo de configuración.</li>
+                                <li>Lee múltiples sistemas de archivos como ext4 o NTFS.</li>
+                                <li>Tiene un menú interactivo para que el usuario diferencia entre distintos sistemas operativos o kernels.</li>
+                                <li>Localiza la imagen del kernel y el disco RAM inicial en el sistema de archivos.</li>
                             </ol>
                         </div>
                     </div>
@@ -145,14 +155,16 @@
                         Fase 5: Carga del Kernel y el Disco RAM Inicial (initrd)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <img src="imagenes/initrd.webp" alt="Esquema de carga del Kernel e Initrd">
+                        <div class="contenido_contenido-imagen" data="Esquema de carga del Kernel e Initrd">
+                            <img src="imagenes/initrd.webp" alt="Esquema de carga del Kernel e Initrd">
+                        </div>
                         <div class="contenido_contenido-texto">
                             <p>
-                                Una vez el usuario selecciona una entrada (o por defecto), el gestor de arranque carga dos artefactos esenciales en la memoria RAM:
+                                Cuando el usuario selecciona una entrada (o por defecto), el gestor de arranque carga dos elementos en la memoria RAM:
                             </p>
                             <ul>
-                                <li><strong>El Kernel:</strong> La imagen del núcleo del sistema operativo (ej. `vmlinuz` en Linux). Es el corazón del SO, responsable de la gestión de memoria, procesos y hardware.</li>
-                                <li><strong>El `initrd` (initial ramdisk):</strong> Un archivo (ej. `initramfs.img`) que contiene un sistema de archivos raíz temporal. Su propósito es crucial: contiene los módulos y controladores (ej. para NVMe, LVM, RAID o LUKS) que el kernel necesita para poder <em>montar</em> el sistema de archivos raíz real, que de otro modo sería inaccesible.</li>
+                                <li><strong>El Kernel:</strong> La imagen del núcleo del sistema operativo. Es responsable de la gestión de memoria, procesos y hardware.</li>
+                                <li><strong>El `initrd` (initial ramdisk):</strong> Es un archivo que contiene un sistema de archivos raíz temporal. Su propósito es manejar los módulos y controladores que el kernel necesita para poder <em>montar</em> el sistema de archivos raíz real (diferente al que ya se ha creado).</li>
                             </ul>
                         </div>
                     </div>
@@ -161,16 +173,18 @@
             <li class="main_lt-elemento">
                 <div class="lt_elemento-contenido">
                     <h3 class="elemento_contenido-titulo">
-                        Fase 6: Inicialización del Kernel y Montaje del Raíz Real
+                        Fase 6: Inicialización del Kernel y Montaje de la Raíz Real
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <img src="imagenes/mensajes_kernel.webp" alt="Inicialización del Kernel">
+                        <div class="contenido_contenido-imagen" data="Inicialización del Kernel">
+                            <img src="imagenes/mensajes_kernel.webp" alt="Inicialización del Kernel">
+                        </div>
                         <div class="contenido_contenido-texto">
                             <p>
-                                El gestor de arranque cede el control de la CPU al kernel, pasándole la ubicación del `initrd`. El kernel se descomprime a sí mismo, se inicializa (configurando la gestión de memoria, interrupciones, etc.) y monta el `initrd` como su sistema raíz (`/`) temporal.
+                                El control del ordenador pasa al kernel. Este se descomprime a sí mismo, se inicializa (configurando la gestión de memoria, interrupciones, etc.) y monta el "initrd" como su sistema raíz ("/") temporal para poder montar la raíz real más tarde.
                             </p>
                             <p>
-                                Desde este entorno temporal, el kernel carga los módulos del `initrd` (ej. `nvme.ko`), detecta el disco duro real, y ejecuta un script que monta el sistema de archivos raíz <em>permanente</em> (definido por el parámetro `root=UUID=...`). Finalmente, utiliza la llamada al sistema `pivot_root` (o `switch_root`) para descartar el `initrd` y adoptar el sistema de archivos permanente como su nuevo `/`.
+                                Desde esta raiz temporal, el kernel carga los módulos del "initrd", detecta el disco duro real y monta el sistema de archivos raíz <em>permanente</em>. Finalmente, utiliza la llamada al sistema "pivot_root" (o "switch_root") para descartar el "initrd" y adoptar el sistema de archivos permanente como su nuevo "/".
                             </p>
                         </div>
                     </div>
@@ -179,16 +193,18 @@
             <li class="main_lt-elemento">
                 <div class="lt_elemento-contenido">
                     <h3 class="elemento_contenido-titulo">
-                        Fase 7: Ejecución del Proceso `init` (Espacio de Usuario)
+                        Fase 7: Ejecución del Proceso "init" (Espacio de Usuario)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <img src="imagenes/arbol_procesos.webp" alt="Árbol de procesos de Systemd">
+                        <div class="contenido_contenido-imagen" data="Árbol de procesos de Systemd">
+                            <img src="imagenes/arbol_procesos.webp" alt="Árbol de procesos de Systemd">
+                        </div>
                         <div class="contenido_contenido-texto">
                             <p>
-                                Con el sistema de archivos real montado, el kernel ha completado su arranque. Su última tarea es ejecutar el primer proceso del <strong>espacio de usuario</strong>: el proceso con <strong>PID 1</strong>.
+                                Con el sistema de archivos real creado, el kernel ha completado su arranque. Su última tarea es ejecutar el primer proceso del <strong>espacio de usuario</strong>.
                             </p>
                             <p>
-                                En sistemas Linux modernos, este es `systemd` (o `init` en sistemas SysV). Este proceso (que ya <em>no</em> es el kernel) se convierte en el padre de todos los demás procesos del sistema. Lee su propia configuración (ej. los 'targets' y 'services' de systemd) e inicia, a menudo en paralelo, todos los demonios del sistema, servicios de red, montaje de sistemas de archivos secundarios y, finalmente, el entorno gráfico y el gestor de inicio de sesión (Login Manager), presentando la pantalla de bienvenida al usuario.
+                                En sistemas Linux modernos, este es `systemd`. Este proceso (que ya <strong>no</strong> es el kernel) se convierte en el padre de todos procesos del sistema. Lee su propia configuración e inicia, a la vez, el resto del sistema: archivos de red, montaje de sistemas de archivos secundarios y, finalmente, el entorno gráfico y el sisetma de inicio de sesión. De este modo presenta la pantalla de bienvenida al usuario.
                             </p>
                         </div>
                     </div>
@@ -199,9 +215,19 @@
     <footer class="footer">
         <section class="footer_contenido">
             <div class="footer_contenido-i">
-                <img src="logos/principal1.png" alt="Logo Principal">
+                <img src="logos/principal2.png" alt="Logo Principal">
             </div>
             <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        ¿Quiénes somos?
+                    </li>
+                    <li>
+                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
+                        nos dedicamos a explicar el proceso de arranque de los ordenadores. <br>
+                        Tratamos de compartir gran parte de nuestro conocimiento de modo que todo el mundo pueda participar de la tecnología.
+                    </li>
+                </ul>
                 <ul class="contenido_d-bloque">
                     <li class="d_bloque-titulo">
                         Recursos

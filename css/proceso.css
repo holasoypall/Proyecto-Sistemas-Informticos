@@ -1,0 +1,145 @@
+body{
+    background-color: var(--GrisClaro);
+}
+/*MAIN*/
+.main{
+    width: 70vw;
+    margin: auto;
+    margin-top: 5rem;  
+}
+.main_titulo{
+    font-size: 3em;
+}
+.main_lt{
+    list-style: none;
+    padding-left: 70px;
+    position: relative;
+
+    counter-reset: lt-contador;
+}
+/*Para el círculo del principo*/
+.main_lt::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px; 
+
+    width: 10px;
+    height: 10px;
+    background-color: var(--AzulOscuro);
+    border-radius: 50%;
+    transform: translateX(-40%); /*Para que el círculo este en el medio tenemos que la lína son 2 px y el círculo son 5 de radio*/
+}
+/*Para las líneas discontinuas*/
+.main_lt::after{
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: repeating-linear-gradient(
+        to bottom,  /* Dirección hacia abajo */
+        var(--AzulOscuro) 5px 20px,  /* 20-5=15 px de tramo: posiciones relativas*/
+        transparent 10px 30px /* 30-10=20 px de espacio: posiciones relativas */
+        /*Ajustamos los valores para que justo coincida con los puntos*/
+    );
+}
+/*Para el círculo del final*/
+.main_lt > li:last-of-type::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+
+    width: 10px;
+    height: 10px;
+    background-color: var(--AzulOscuro);
+    border-radius: 50%;
+    transform: translateX(-40%);
+}
+/*Para los círculos enumerados*/
+.main_lt-elemento::before{
+    counter-increment: lt-contador;
+    content: counter(lt-contador);
+    
+    position: absolute;
+    
+    left: 1px;
+    margin-top: 50px;  /*Con esto solucionamos que cada elemento se coloque lo más arriba posible dentro de cada contenedor, no podemos usar el top=*px o bottom=*px porque sino todos se ponen en la misma y solo sale el último círculo en dicha posición*/
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+    border: 2px solid var(--AzulOscuro);
+    background-color: white;
+    color: var(--AzulOscuro);
+    font-weight: 500;
+    font-size: 20px;
+
+    /*Alineamos el número dentro del círculo*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /*Solucinoamos problemas de ver quien queda por encima de quien; tiene que ser menor que las imágenes en hover para que puedan verse bien (90<100)*/
+    z-index: 90;
+}
+.elemento_contenido-contenido{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.contenido_contenido-imagen > img{
+    width: 30rem;
+    border-radius: 1rem;
+    z-index: 99;
+    transition: scale .6s ease;
+
+    position: relative;
+}
+.contenido_contenido-imagen > img:hover{
+    scale: 1.75;
+    z-index: 100;
+    cursor: pointer;
+}
+.contenido_contenido-imagen::after{
+    content: attr(data);
+
+    position: absolute;
+    transform: translateX(-125%) translateY(-120%);
+
+    width: 200px;
+    height: fit-content;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    
+    background-color: white;
+    opacity: 0;
+    
+    z-index: 90;
+    
+    pointer-events: none;
+
+    transition: opacity .6s ease, transform .6s ease;
+}
+.contenido_contenido-imagen:hover::after{
+    transform: translateX(-300%) translateY(-280%);
+    opacity: 1;
+}
+.contenido_contenido-texto > p{
+    text-align: left;
+}
+.contenido_contenido-texto > ul{
+    list-style: disc;
+    margin-left: 3rem;
+}
+.contenido_contenido-texto > ul > li{
+    text-align: left;
+}
