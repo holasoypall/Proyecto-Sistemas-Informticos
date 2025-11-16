@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="Proyecto Arranque PC">
+    <meta name="description" content="Explicación del sistema de arranque de un ordenador: ROM, BIOS, MBR y EFI. Cómo el equipo inicia desde el encendido hasta el sistema operativo.">
+    <meta name="keywords" content="sistema de arranque, BIOS, ROM, MBR, EFI, ordenador, informática, boot, UEFI, programación, electrónica">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="es">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/inicio.css">
+
+    <title>Curiosidades</title>
+</head>
+
+<body>
+
+ <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Logo Principal" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Inicio" class="nav_div-img">
+            <a href="index.html">Inicio</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Logo Proceso" class="nav_div-img">
+            <a href="proceso.html">Proceso</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="Logo ROM" class="nav_div-img">
+            <a href="rom.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="Logo BIOS" class="nav_div-img">
+            <a href="bios.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="Logo MBR" class="nav_div-img">
+            <a href="mbr.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="Logo EFI" class="nav_div-img">
+            <a href="efi.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Logo Comparativa" class="nav_div-img">
+            <a href="comparativa.html">Comparativa</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Logo Curiosidades" class="nav_div-img">
+            <a href="curiosidades.html">Curiosidades</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="main_intro">
+            <div class="main_intro-div">
+                <h2 class="main_intro-titulo">Curiosidades:</h2>
+                <br>
+            </div>
+        </section>
+
+        <h3 class="main_subtitulo"> Existen varios tipos de arranque:  </h3>
+        <ul class="main_curiosidades-lista">
+            <li>
+                <p class="texto-li"> Arranque desde disco duro: el más común. </p>
+            </li>
+            <li>
+                <p class="texto-li">Arranque desde USB o CD/DVD: para instalar o reparar sistemas. </p>
+            </li>
+            <li>
+                <p class="texto-li"> Arranque en red (PXE): usado en empresas para cargar sistemas desde un servidor. </p>
+            </li>
+            <li>
+                <p class="texto-li">Arranque dual/múltiple: tener varios sistemas operativos (Windows + Linux, por ejemplo).  </p>
+            </li>
+            <li>
+            <p class="texto-li">Arranque seguro (Secure Boot): solo permite cargar sistemas firmados 
+            digitalmente (evita malware en el arranque).  </p>
+            </li>
+        </ul>
+        <br>
+        <h3 class="main_subtitulo"> Más curiosidades: </h3>
+        <ul class="main_curiosidades-lista">
+            <li>
+                <p class="texto-li"> En los Mac, el equivalente a la BIOS es el EFI Apple Boot Manager.</p>
+            </li>
+            <li>
+                <p class="texto-li"> El tiempo de arranque puede variar mucho según el firmware, el tipo de disco 
+                (HDD vs SSD) y si está activado el Fast Boot. </p>
+            </li>
+            <li>
+                <p class="texto-li">  Algunos ordenadores antiguos necesitaban discos de arranque (como el famoso 
+                “A:>” de MS-DOS). </p>
+            </li>
+        </ul>
+        <br>
+        <h3 class="main_subtitulo"> ¿Como funciona el sistema de arranque?  </h3>
+        <p class="texto-curiosidades">Cuando enciendes un ordenador este no arranca directamente el sistema operativo, 
+        antes ocurren una serie de pasos muy controlados para comprobar el hardware y 
+        cargar el software básico que permitirá iniciar el sistema. </p>
+        <br>
+
+        <h3 class="main_subtitulo"> Etapas principales del sistema de arranque: </h3>
+        <ul class="main_curiosidades-lista">
+            <li>
+                <p class="texto-li">La corriente eléctrica llega a la placa base. </p>
+            </li>
+            <li>
+                <p class="texto-li">Ejecución del firmware BIOS/UEFI: el código grabado en la memoria ROM se ejecuta. </p>
+            </li>
+            <li>
+                <p class="texto-li">POST o Power-On Self Test: se comprueban memoria RAM, CPU, teclado, etc.</p>
+            </li>
+            <li>
+                <p class="texto-li">Búsqueda del dispositivo de arranque como disco, USB, red, etc.</p>
+            </li>
+            <li>
+                <p class="texto-li">Carga del gestor de arranque o bootloader ubicado en el MBR o en la partición EFI.</p>
+            </li>
+            <li> 
+                <p class="texto-li">Finalmente se inicia el sistema operativo. </p>
+            </li>
+        </ul>
+    <br>
+    </main>
+
+    <div class= "galeria-curiosidades">
+        <div class= "galeria-item">
+            <img src="imagenes/BootMenu.webp" alt="Boot Menu">
+        </div>
+        <br>	
+        <div class= "galeria-item">
+            <img src="imagenes/Linux.webp" alt="Sistema Operativo de Linux">
+        </div>
+        <br>
+        <div class= "galeria-item">
+            <img src="imagenes/SistemasOperativos.webp" alt="Cambio entre sistemas Operativos">
+        </div>
+        <br>
+    </div>
+
+   <footer class="footer">
+        <section class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        ¿Quiénes somos?
+                    </li>
+                    <li>
+                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
+                        dedicados a explorar y explicar el fascinante proceso de arranque de los ordenadores. <br>
+                        Nuestro objetivo es compartir conocimientos y hacer que la tecnología sea accesible para todos.
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Recursos
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Equipo
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </section>
+        <hr>
+        <section class="footer_derechos">
+            © 2025 Todos los derechos reservados.
+        </section>
+    </footer>
+</body>
+</html>
