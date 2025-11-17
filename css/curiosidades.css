@@ -1,0 +1,19 @@
+body{
+    background-color: var(--GrisClaro);
+}
+.main, .galeria-curiosidades{
+    width: 65vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+.main_intro-titulo{
+    font-size: 2.25em
+}
+.galeria-item > img{
+    width: 100%;
+}

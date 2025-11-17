@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/general.css">
     <link rel="stylesheet" type="text/css" href="css/proceso.css">
 
-    <title>Encendido del Sistema Operativo</title>
+    <title>Proceso</title>
 </head>
 <body>
     <nav class="nav">
@@ -64,7 +64,7 @@
                         Fase 1: Autodiagnóstico de Encendido (POST)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <div class="contenido_contenido-imagen" data="Pantalla de POST de una BIOS">
+                        <div class="contenido_contenido-imagen" data-img="Pantalla de POST de una BIOS">
                             <img src="imagenes/pantalla_post.webp" alt="Pantalla de POST de una BIOS">
                         </div>
                         <div class="contenido_contenido-texto">
@@ -90,7 +90,7 @@
                         Fase 2: Inicialización de Firmware y Selección de Dispositivo
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <div class="contenido_contenido-imagen" data="Menú de orden de arranque en UEFI">
+                        <div class="contenido_contenido-imagen" data-img="Menú de orden de arranque en UEFI">
                             <img src="imagenes/orden_arranque.webp" alt="Menú de orden de arranque en UEFI">
                         </div>
                         <div class="contenido_contenido-texto">
@@ -107,7 +107,7 @@
                         Fase 3: Carga del Código de Arranque (La bifurcación MBR vs. UEFI)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <div class="contenido_contenido-imagen" data="Comparación BIOS vs UEFI">
+                        <div class="contenido_contenido-imagen" data-img="Comparación BIOS vs UEFI">
                             <img src="imagenes/uefi_bios.webp" alt="Comparación BIOS vs UEFI">
                         </div>
                         <div class="contenido_contenido-texto">
@@ -132,7 +132,7 @@
                         Fase 4: Ejecución del Gestor de Arranque (Stage 2)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <div class="contenido_contenido-imagen" data="Menú del gestor de arranque GRUB 2">
+                        <div class="contenido_contenido-imagen" data-img="Menú del gestor de arranque GRUB 2">
                             <img src="imagenes/menu_grub.webp" alt="Menú del gestor de arranque GRUB 2">
                         </div>
                         <div class="contenido_contenido-texto">
@@ -155,7 +155,7 @@
                         Fase 5: Carga del Kernel y el Disco RAM Inicial (initrd)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <div class="contenido_contenido-imagen" data="Esquema de carga del Kernel e Initrd">
+                        <div class="contenido_contenido-imagen" data-img="Esquema de carga del Kernel e Initrd">
                             <img src="imagenes/initrd.webp" alt="Esquema de carga del Kernel e Initrd">
                         </div>
                         <div class="contenido_contenido-texto">
@@ -176,7 +176,7 @@
                         Fase 6: Inicialización del Kernel y Montaje de la Raíz Real
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <div class="contenido_contenido-imagen" data="Inicialización del Kernel">
+                        <div class="contenido_contenido-imagen" data-img="Inicialización del Kernel">
                             <img src="imagenes/mensajes_kernel.webp" alt="Inicialización del Kernel">
                         </div>
                         <div class="contenido_contenido-texto">
@@ -196,7 +196,7 @@
                         Fase 7: Ejecución del Proceso "init" (Espacio de Usuario)
                     </h3>
                     <div class="elemento_contenido-contenido">
-                        <div class="contenido_contenido-imagen" data="Árbol de procesos de Systemd">
+                        <div class="contenido_contenido-imagen" data-img="Árbol de procesos de Systemd">
                             <img src="imagenes/arbol_procesos.webp" alt="Árbol de procesos de Systemd">
                         </div>
                         <div class="contenido_contenido-texto">
@@ -213,19 +213,18 @@
         </ol>
     </main>
     <footer class="footer">
-        <section class="footer_contenido">
+        <div class="footer_contenido">
             <div class="footer_contenido-i">
                 <img src="logos/principal2.png" alt="Logo Principal">
             </div>
             <div class="footer_contenido-d">
                 <ul class="contenido_d-bloque">
                     <li class="d_bloque-titulo">
-                        ¿Quiénes somos?
+                        Verificación
                     </li>
                     <li>
-                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
-                        nos dedicamos a explicar el proceso de arranque de los ordenadores. <br>
-                        Tratamos de compartir gran parte de nuestro conocimiento de modo que todo el mundo pueda participar de la tecnología.
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
                     </li>
                 </ul>
                 <ul class="contenido_d-bloque">
@@ -260,11 +259,11 @@
                     </li>
                 </ul>                
             </div>
-        </section>
+        </div>
         <hr>
-        <section class="footer_derechos">
+        <div class="footer_derechos">
             © 2025 Todos los derechos reservados.
-        </section>
+        </div>
     </footer>
 </body>
 </html>

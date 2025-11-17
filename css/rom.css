@@ -71,3 +71,12 @@ body{
 .main_debajo > p{
     margin: 0;
 }
+@media (max-width: 850px) {
+  .main{
+    grid-template-areas: 
+    "titulo titulo"
+    "partei partei"
+    "parted parted"
+    "imagen imagen";
+  }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/general.css">
     <link rel="stylesheet" type="text/css" href="css/rom.css">
 
-    <title>Encendido del Sistema Operativo</title>
+    <title>ROM</title>
 </head>
 <body>
     <nav class="nav">
@@ -74,15 +74,16 @@
             <h3 class="main_i-importante">IMPORTANTE ! ! !</h3>
             <p>
                 Es fundamental no confundir la ROM con la <strong>RAM</strong> (Random-Access Memory).
-                <ul>
-                    <li>
-                    <strong>La ROM es el "cerebro permanente":</strong> Almacena las instrucciones que <em>nunca</em> cambian.
-                    </li>
-                    <li>
-                    <strong>La RAM es la "mesa temporal":</strong> Almacena programas y archivos que estás usando <em>en tiempo real</em>. Es volátil (se borra al apagar) y es tanto de lectura como de escritura.
-                    </li>
-                </ul>
             </p>
+            <ul>
+                <li>
+                <strong>La ROM es el "cerebro permanente":</strong> Almacena las instrucciones que <em>nunca</em> cambian.
+                </li>
+                <li>
+                <strong>La RAM es la "mesa temporal":</strong> Almacena programas y archivos que estás usando <em>en tiempo real</em>. Es volátil (se borra al apagar) y es tanto de lectura como de escritura.
+                </li>
+            </ul>
+            
             <p>
                 Cuando enciendes el ordenador, la CPU (el procesador) está diseñada para hacer una sola cosa: encontrar una instrucción en una dirección de memoria concreta. Esta dirección mira <strong>directamente</strong> al chip de la ROM.
                 <br>
@@ -101,7 +102,7 @@
                 <li><strong>EEPROM (Electrically Erasable Prog. ROM): </strong> <br> La más moderna. Se puede borrar y reprogramar eléctricamente, sin sacarla del circuito.</li>
             </ul>
         </aside>
-        <article class="main_debajo">
+        <div class="main_debajo">
             <div class="main_debajo-img">
                 <img src="imagenes/rom_esquema.webp" alt="Esquema eléctrico ROM">
             </div>
@@ -109,22 +110,21 @@
             <p>
                 Esquema de ejecución ROM
             </p>
-        </article>
+        </div>
     </main>
     <footer class="footer">
-        <section class="footer_contenido">
+        <div class="footer_contenido">
             <div class="footer_contenido-i">
                 <img src="logos/principal2.png" alt="Logo Principal">
             </div>
             <div class="footer_contenido-d">
                 <ul class="contenido_d-bloque">
                     <li class="d_bloque-titulo">
-                        ¿Quiénes somos?
+                        Verificación
                     </li>
                     <li>
-                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
-                        dedicados a explorar y explicar el fascinante proceso de arranque de los ordenadores. <br>
-                        Nuestro objetivo es compartir conocimientos y hacer que la tecnología sea accesible para todos.
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
                     </li>
                 </ul>
                 <ul class="contenido_d-bloque">
@@ -159,11 +159,11 @@
                     </li>
                 </ul>                
             </div>
-        </section>
+        </div>
         <hr>
-        <section class="footer_derechos">
+        <div class="footer_derechos">
             © 2025 Todos los derechos reservados.
-        </section>
+        </div>
     </footer>
 </body>
 </html>

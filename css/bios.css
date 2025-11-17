@@ -55,3 +55,15 @@ body{
     width: 80rem;
     border-radius: 1rem;
 }
+
+@media (max-width: 650px) {
+  .main_comparacion-img > img {
+    width: 45rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .main_comparacion-img > img {
+    width: 30rem;
+  }
+}

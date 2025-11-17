@@ -35,3 +35,18 @@ body{
 .comparativa_li-subtitulo{
     text-align: center;
 }
+.main_visual-img{
+    width: 50rem;
+}
+
+@media (max-width: 650px) {
+  .main_visual-img {
+    width: 35rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .main_visual-img {
+    width: 25rem;
+  }
+}

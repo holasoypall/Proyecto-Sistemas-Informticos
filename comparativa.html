@@ -11,9 +11,9 @@
     <meta name="language" content="es">
 
     <link rel="stylesheet" type="text/css" href="css/general.css"> 
-    <link rel="stylesheet" type="text/css" href="css/bios.css"> 
+    <link rel="stylesheet" type="text/css" href="css/comparativa.css"> 
 
-    <title>Comparativa MBR vs EFI</title>
+    <title>Comparativa</title>
 </head>
 
 <body>
@@ -189,35 +189,35 @@
       </tr>
     </table>
     <br>
+    <div class="abajo">
+      <h3 class="subtitle_comparativa"> Seguridad: </h3>
+      <p class="text_comparativa"> MBR: Carece de verificación de integridad por lo que si el sector 0 se daña o es infectado, el sistema no arrancara y ademas  
+      no soporta medidas modernas como Secure Boot.</p>
+      <p class="text_comparativa">EFI/GPT:  Usa CRC32 checksums para validar la tabla de particiones y detectar errores, también es compatible con Secure Boot y 
+      puede almacenar varios gestores de arranque seguros en la ESP. </p>
+      <br>
 
-    <h3 class="subtitle_comparativa"> Seguridad: </h3>
-    <p class="text_comparativa"> MBR: Carece de verificación de integridad por lo que si el sector 0 se daña o es infectado, el sistema no arrancara y ademas  
-    no soporta medidas modernas como Secure Boot.</p>
-    <p class="text_comparativa">EFI/GPT:  Usa CRC32 checksums para validar la tabla de particiones y detectar errores, también es compatible con Secure Boot y 
-    puede almacenar varios gestores de arranque seguros en la ESP. </p>
-    <br>
-
-    <h3 class="subtitle_comparativa"> Conclusiones: </h3>
-    <p class="text_comparativa"> MBR sigue siendo útil por compatibilidad retro especialmente en equipos antiguos o medios de arranque universales 
-    (USB, recuperación, etc.).</p>
-    <p class="text_comparativa">GPT/EFI es más seguro, rápido y escalable y es el estándar actual en  
-    todos los sistemas operativos modernos.</p>
+      <h3 class="subtitle_comparativa"> Conclusiones: </h3>
+      <p class="text_comparativa"> MBR sigue siendo útil por compatibilidad retro especialmente en equipos antiguos o medios de arranque universales 
+      (USB, recuperación, etc.).</p>
+      <p class="text_comparativa">GPT/EFI es más seguro, rápido y escalable y es el estándar actual en  
+      todos los sistemas operativos modernos.</p>
+    </div>
 
     <br>
     <footer class="footer">
-        <section class="footer_contenido">
+        <div class="footer_contenido">
             <div class="footer_contenido-i">
                 <img src="logos/principal2.png" alt="Logo Principal">
             </div>
             <div class="footer_contenido-d">
                 <ul class="contenido_d-bloque">
                     <li class="d_bloque-titulo">
-                        ¿Quiénes somos?
+                        Verificación
                     </li>
                     <li>
-                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
-                        dedicados a explorar y explicar el fascinante proceso de arranque de los ordenadores. <br>
-                        Nuestro objetivo es compartir conocimientos y hacer que la tecnología sea accesible para todos.
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
                     </li>
                 </ul>
                 <ul class="contenido_d-bloque">
@@ -252,11 +252,11 @@
                     </li>
                 </ul>                
             </div>
-        </section>
+        </div>
         <hr>
-        <section class="footer_derechos">
+        <div class="footer_derechos">
             © 2025 Todos los derechos reservados.
-        </section>
+        </div>
     </footer>
 </body>
 </html>

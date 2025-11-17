@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <meta name="language" content="es">
 
     <link rel="stylesheet" type="text/css" href="css/general.css">
-    <link rel="stylesheet" type="text/css" href="css/inicio.css">
+    <link rel="stylesheet" type="text/css" href="css/efi.css">
 
     <title>EFI</title>
 </head>
@@ -56,83 +56,82 @@
         </div>
     </nav>
 
-<main class="main">
-    <section class="main_intro">
-        <div class="main_intro-div">
-            <h2 class="main_intro-titulo">¿De donde viene EFI?</h2>
-            <p class="main_intro-texto">EFI (Extensible Firmware Interface) es una interfaz entre el hardware del sistema y
-            el sistema operativo que fue desarrollada por Intel <span> <img src= "imagenes/intel.webp" alt = "Intel"> </span> como reemplazo del antiguo BIOS (Basic Input/Output System), 
-            uno de sus propostios principales es proporcionar un entorno más flexible y moderno para el arranque del sistema y la gestión del hardware. </p>
-            <br>
+    <main class="main">
+        <section class="main_intro">
+            <div class="main_intro-div">
+                <h2 class="main_intro-titulo">¿De donde viene EFI?</h2>
+                <p class="main_intro-texto">EFI (Extensible Firmware Interface) es una interfaz entre el hardware del sistema y
+                el sistema operativo que fue desarrollada por Intel <span> <img src= "imagenes/intel.webp" alt = "Intel"> </span> como reemplazo del antiguo BIOS (Basic Input/Output System), 
+                uno de sus propostios principales es proporcionar un entorno más flexible y moderno para el arranque del sistema y la gestión del hardware. </p>
+                <br>
 
-            <h2 class="main_intro-titulo">¿Que hace el EFI?</h2>
-            <p class="main_intro-texto"> </p>
-            <br>
+                <h2 class="main_intro-titulo">¿Que hace el EFI?</h2>
+                <p class="main_intro-texto"> </p>
+                <br>
+            </div>
+        </section>
+
+        <h3 class="main_subtitulo"> Entre sus funciones principales destacan: </h3>
+        <ul class="main_explicacion-lista">
+            <li>
+                <p class="texto-li"> Inicia y prueba los componentes de hardware al encender el equipo.</p>
+            </li>
+            <li>
+                <p class="texto-li"> Carga el sistema operativo ( Windows o Linux por ejemplo). </p>
+            </li>
+            <li>
+                <p class="texto-li">  Permite configuraciones más avanzadas que el BIOS antiguo, soporta discos duros grandes como GPT en vez de MBR y tiene una interfaz más moderna y visual.</p>
+            </li>
+        </ul>
+        <br>
+
+        <h3 class="main_subtitulo">Algunas de sus características principales son:</h3>
+        <ul class="main_explicacion-lista">
+            <li>
+                <p class="texto-li">Su formato de archivos es FAT32 y su tamaño ronda entre 100 y 500MB.</p>
+            </li>
+            <li>
+                <p class="texto-li"> Su tipo de partición es el EFI System Partition en GPT y su ubicación varia, pero se haya normalmente al principio del disco.</p>
+            </li>
+        </ul>
+        <br>
+
+    </main>
+    <div class= "galeria">
+
+        <div class= "galeria-item" data-caption="Particiones">
+            <img src="imagenes/imagenParticiones.webp" alt="Particiones EFI">
         </div>
-    </section>
+        <p class="texto-img">Esta imagen es un ejemplo de los tipos de particiones, correspondiendo la rodeada a las particiones EFI.</p>
+        <br>
 
-    <h3 class="main_subtitulo"> Entre sus funciones principales destacan: </h3>
-    <ul class="main_explicacion-lista">
-        <li>
-            <p class="texto-li"> Inicia y prueba los componentes de hardware al encender el equipo.</p>
-        </li>
-        <li>
-            <p class="texto-li"> Carga el sistema operativo ( Windows o Linux por ejemplo). <span> <img src= ".jpg" alt = "Sistema operativo"> </span> </p>
-        </li>
-        <li>
-            <p class="texto-li">  Permite configuraciones más avanzadas que el BIOS antiguo, soporta discos duros grandes como GPT en vez de MBR y tiene una interfaz más moderna y visual.</p>
-        </li>
-    </ul>
-    <br>
+        <div class= "galeria-item" data-caption="Particiones">
+            <img src="imagenes/imagen+particiones.webp" alt="Particiones EFI">
+        </div>
+        <p class="texto-img">Más ejemplos de particiones EFI.</p>
+        <br>
 
-    <h3 class="main_subtitulo">Algunas de sus características principales son:</h3>
-    <ul class="main_explicacion-lista">
-        <li>
-            <p class="texto-li">Su formato de archivos es FAT32 y su tamaño ronda entre 100 y 500MB.</p>
-        </li>
-        <li>
-            <p class="texto-li"> Su tipo de partición es el EFI System Partition en GPT y su ubicación varia, pero se haya normalmente al principio del disco.</p>
-        </li>
-    </ul>
-    <br>
+        <div class= "galeria-item" data-caption="UEFI">
+            <img src="imagenes/uefi2.webp" alt="Base UEFI">
+        </div>
+        <p class="texto-img">Interfaz de UEFI/BIOS</p>
+        <br>
 
-</main>
-<div class= "galeria">
-
-	<div class= "galeria-item" data-caption="Particiones">
-	<img src="imagenes/imagenParticiones.webp" alt="Particiones EFI">
-	</div>
-	<p class="texto-img">Esta imagen es un ejemplo de los tipos de particiones, correspondiendo la rodeada a las particiones EFI.</p>
-    <br>
-
-	<div class= "galeria-item" data-caption="Particiones">
-	<img src="imagenes/imagen+particiones.webp" alt="Particiones EFI">
-	</div>
-	<p class="texto-img">Más ejemplos de particiones EFI.</p>
-    <br>
-
-	<div class= "galeria-item" data-caption="UEFI">
-	<img src="imagenes/uefi2.webp" alt="Base UEFI">
-	</div>
-	<p class="texto-img">Interfaz de UEFI/BIOS</p>
-    <br>
-
-</div>
+    </div>
 
    <footer class="footer">
-        <section class="footer_contenido">
+        <div class="footer_contenido">
             <div class="footer_contenido-i">
                 <img src="logos/principal2.png" alt="Logo Principal">
             </div>
             <div class="footer_contenido-d">
                 <ul class="contenido_d-bloque">
                     <li class="d_bloque-titulo">
-                        ¿Quiénes somos?
+                        Verificación
                     </li>
                     <li>
-                        Somos un equipo de estudiantes de la Universidad de La Rioja apasionados por la informática,
-                        dedicados a explorar y explicar el fascinante proceso de arranque de los ordenadores. <br>
-                        Nuestro objetivo es compartir conocimientos y hacer que la tecnología sea accesible para todos.
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
                     </li>
                 </ul>
                 <ul class="contenido_d-bloque">
@@ -167,11 +166,11 @@
                     </li>
                 </ul>                
             </div>
-        </section>
+        </div>
         <hr>
-        <section class="footer_derechos">
+        <div class="footer_derechos">
             © 2025 Todos los derechos reservados.
-        </section>
+        </div>
     </footer>
 
 </body>

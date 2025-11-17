@@ -1,0 +1,36 @@
+body{
+    background-color: var(--GrisClaro);
+}
+.main{
+    width: 65vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+.main_intro-titulo{
+    font-size: 2.2em;
+}
+.main_intro-texto > span > img{
+    width: 3rem;
+    vertical-align: super;
+    border-radius: 23rem;
+}
+
+.galeria{
+    width: 65vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    
+}
+.galeria-item > img{
+    width: 100%;
+}

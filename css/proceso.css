@@ -109,7 +109,7 @@ body{
     cursor: pointer;
 }
 .contenido_contenido-imagen::after{
-    content: attr(data);
+    content: attr(data-img);
 
     position: absolute;
     transform: translateX(-125%) translateY(-120%);
@@ -142,4 +142,10 @@ body{
 }
 .contenido_contenido-texto > ul > li{
     text-align: left;
+}
+
+@media (max-width: 850px) {
+  .elemento_contenido-contenido{
+    flex-direction: column;
+  }
 }
