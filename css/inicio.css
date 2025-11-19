@@ -66,6 +66,13 @@ body{
     width: 100%;
     
 }
+.header_i-idioma > img{
+    width: 4rem;
+    transition: transform .3s ease-in-out;
+}
+.header_i-idioma > img:hover{
+    transform: scale(1.5);
+}
 .main_intro-titulo{
     font-size: 3rem;
 }

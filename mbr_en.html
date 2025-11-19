@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="PC Startup Project">
+    <meta name="description" content="MBR Explanation: Comparison with GPT">
+    <meta name="keywords" content="boot system, BIOS, ROM, MBR, EFI, computer, TIC, boot, UEFI, programming, electronics">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="en">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css"> 
+    <link rel="stylesheet" type="text/css" href="css/mbr.css"> 
+
+    <title>MBR</title>
+
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Main Logo" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Home" class="nav_div-img">
+            <a href="index_en.html">Home</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Process Logo" class="nav_div-img">
+            <a href="proceso_en.html">Process</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="ROM Logo" class="nav_div-img">
+            <a href="rom_en.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="BIOS Logo" class="nav_div-img">
+            <a href="bios_en.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="MBR Logo" class="nav_div-img">
+            <a href="mbr_en.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="EFI Logo" class="nav_div-img">
+            <a href="efi_en.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Comparison Logo" class="nav_div-img">
+            <a href="comparativa_en.html">Comparison</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Curiosities Logo " class="nav_div-img">
+            <a href="curiosidades_en.html">Curiosities</a>
+        </div>
+    </nav>
+    <main class="main">
+        <section class="main_intro">
+            <div class="main_intro-div">
+                <h2 class="main_intro-titulo">MBR: Master Boot Record</h2>
+                <p class="main_intro-texto">
+                    The MBR is the first physical sector of a data storage device that the computer boots from; this is done through the BIOS.<br>
+                    On storage devices containing boot data, partitions are allocated a maximum of 2TB due to current limitations. Their specific address on the disk sector is Cylinder 0, Head 0, Sector 1.<br>
+                    For the boot process, MBR consists of three parts: the master boot code, the master partition table, and the disk signature.<br>
+                </p>
+                <p class="main_intro-tareas"> 
+                    The tasks of the MBR can be divided into 3 parts:<br>
+                </p>
+                <ul class="main_texto-lista">
+                    <li class="texto_li">
+                        <p>
+                            The BIOS looks for a target device to boot the MBR from when a computer is first turned on.
+                        </p>
+                    </li>
+                    <li class="texto_li">
+                        <p>
+                            The MBR boot code reads the partition table and identifies the “active” partition.
+                        </p>
+                    </li>
+                    <li class="texto_li">
+                        <p>
+                            Use the boot sector of that partition to start the operating system.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="main_visual">
+            <div class="main_visual-div">
+                <img src="imagenes/MBRvisual.webp" alt="MBR" class="main_visual-img">
+            </div>
+        </div>
+        <section class="main_comparativa">
+            <h2 class="main_comparativa-titulo">MBR vs GPT</h2>
+            <p class="main_comparativa-texto">
+                GPT (GUID Partition Table) is the modern form of partition tables, which eliminates some of the limitations of MBR.
+            </p>
+            <ul class="main_comparativa-lista">
+                <li class="comparativa_li"> 
+                    <h3 class="comparativa_li-subtitulo"> MBR</h3>
+                    <ul class="comparativa_caracteristicas-mbr">
+                        <li class="caracteristicas_li-mbr"> 
+                            Maximum of 4 primary partitions, maximum size of 2TB per disk.
+                        </li>
+                        <li class="caracteristicas_li-mbr"> 
+                            Compatible with older operating systems and BIOS.
+                        </li>
+                        <li class="caracteristicas_li-mbr"> 
+                            Suitable for hard drives up to 2TB and systems without UEFI.
+                        </li>
+                    </ul>
+                </li>
+                <li class="comparativa_li">
+                    <h3 class="comparativa_li-subtitulo"> GPT</h3>
+                    <ul class="comparativa_caracteristicas-gpt">
+                        <li class="caracteristicas_li-gpt"> 
+                            It supports an unlimited number of partitions, with no 2TB limit.
+                        </li>
+                        <li class="caracteristicas_li-gpt"> 
+                            Optimized for UEFI systems.
+                        </li>
+                        <li class="caracteristicas_li-gpt"> 
+                            Suitable for drives larger than 2 TB and for greater capacity and flexibility.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Verification
+                    </li>
+                    <li>
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Resources
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Team
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </div>
+        <hr>
+        <div class="footer_derechos">
+            © 2025 All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="PC Startup Project">
+    <meta name="description" content="An explication of the computer boot system: ROM, BIOS, MBR and EFI. How the device starts from power on to the operating system.">
+    <meta name="keywords" content="boot system, BIOS, ROM, MBR, EFI, computer, TIC, boot, UEFI, programming, electronics">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="en">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/curiosidades.css">
+
+    <title>Curiosities</title>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Main Logo" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Home" class="nav_div-img">
+            <a href="index_en.html">Home</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Process Logo" class="nav_div-img">
+            <a href="proceso_en.html">Process</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="ROM Logo" class="nav_div-img">
+            <a href="rom_en.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="BIOS Logo" class="nav_div-img">
+            <a href="bios_en.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="MBR Logo" class="nav_div-img">
+            <a href="mbr_en.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="EFI Logo" class="nav_div-img">
+            <a href="efi_en.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Comparison Logo" class="nav_div-img">
+            <a href="comparativa_en.html">Comparison</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Curiosities Logo " class="nav_div-img">
+            <a href="curiosidades_en.html">Curiosities</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="main_intro">
+            <div class="main_intro-div">
+                <h2 class="main_intro-titulo">Curiosities</h2>
+                <br>
+            </div>
+        </section>
+
+        <h3 class="main_subtitulo"> There are several types of startup: </h3>
+        <ul class="main_curiosidades-lista">
+            <li>
+                <p class="texto-li"> Booting from hard drive: the most common. </p>
+            </li>
+            <li>
+                <p class="texto-li">Boot from USB or CD/DVD: to install or repair systems.</p>
+            </li>
+            <li>
+                <p class="texto-li">Network boot (PXE): used in companies to load systems from a server.</p>
+            </li>
+            <li>
+                <p class="texto-li">Dual/multiple boot: having several operating systems (Windows + Linux, for example).</p>
+            </li>
+            <li>
+            <p class="texto-li">Secure Boot: only allows loading digitally signed systems (prevents malware at startup).</p>
+            </li>
+        </ul>
+        <br>
+        <h3 class="main_subtitulo">More curiosities:</h3>
+        <ul class="main_curiosidades-lista">
+            <li>
+                <p class="texto-li">On Macs, the equivalent of the BIOS is the EFI Apple Boot Manager.</p>
+            </li>
+            <li>
+                <p class="texto-li">Boot time can vary greatly depending on the firmware, the type of disk (HDD vs SSD), and whether Fast Boot is enabled.</p>
+            </li>
+            <li>
+                <p class="texto-li">Some older computers required boot disks (like the famous MS-DOS "A:>" disk).</p>
+            </li>
+        </ul>
+        <br>
+        <h3 class="main_subtitulo"> How does the boot system work? </h3>
+        <p class="texto-curiosidades">
+            When you turn on a computer, it doesn't directly boot into the operating system. First, a series of highly controlled steps occur to check the hardware and load the basic software that will allow the system to start.
+        </p>
+        <br>
+
+        <h3 class="main_subtitulo"> Main stages of the starting system: </h3>
+        <ul class="main_curiosidades-lista">
+            <li>
+                <p class="texto-li">The electrical current reaches the motherboard.</p>
+            </li>
+            <li>
+                <p class="texto-li">BIOS/UEFI firmware execution: the code recorded in the ROM memory is executed.</p>
+            </li>
+            <li>
+                <p class="texto-li">POST or Power-On Self Test: checks RAM, CPU, keyboard, etc.</p>
+            </li>
+            <li>
+                <p class="texto-li">Search for boot device such as disk, USB, network, etc.</p>
+            </li>
+            <li>
+                <p class="texto-li">Loading the boot manager or bootloader located in the MBR or in the EFI partition.</p>
+            </li>
+            <li> 
+                <p class="texto-li">Finally, the operating system starts.</p>
+            </li>
+        </ul>
+    <br>
+    </main>
+
+    <div class= "galeria-curiosidades">
+        <div class= "galeria-item">
+            <img src="imagenes/BootMenu.webp" alt="Boot Menu">
+        </div>
+        <br>	
+        <div class= "galeria-item">
+            <img src="imagenes/Linux.webp" alt="Linux Operating System">
+        </div>
+        <br>
+        <div class= "galeria-item">
+            <img src="imagenes/SistemasOperativos.webp" alt="Switching between operating systems">
+        </div>
+        <br>
+    </div>
+
+    <footer class="footer">
+        <div class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Verification
+                    </li>
+                    <li>
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Resources
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Team
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </div>
+        <hr>
+        <div class="footer_derechos">
+            © 2025 All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

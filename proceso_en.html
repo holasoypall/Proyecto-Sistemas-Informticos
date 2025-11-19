@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="PC Startup Project">
+    <meta name="description" content="An explication of the computer boot system: ROM, BIOS, MBR and EFI. How the device starts from power on to the operating system.">
+    <meta name="keywords" content="boot system, BIOS, ROM, MBR, EFI, computer, TIC, boot, UEFI, programming, electronics">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="en">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/proceso.css">
+
+    <title>Process</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Main Logo" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Home" class="nav_div-img">
+            <a href="index_en.html">Home</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Process Logo" class="nav_div-img">
+            <a href="proceso_en.html">Process</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="ROM Logo" class="nav_div-img">
+            <a href="rom_en.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="BIOS Logo" class="nav_div-img">
+            <a href="bios_en.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="MBR Logo" class="nav_div-img">
+            <a href="mbr_en.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="EFI Logo" class="nav_div-img">
+            <a href="efi_en.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Comparison Logo" class="nav_div-img">
+            <a href="comparativa_en.html">Comparison</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Curiosities Logo " class="nav_div-img">
+            <a href="curiosidades_en.html">Curiosities</a>
+        </div>
+    </nav>
+    <main class="main">
+        <h1 class="main_titulo">
+            The journey: From Scrath to the Operating System
+        </h1>
+        <ol class="main_lt">
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Phase 1: Ignition Self-Diagnosis (POST)
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <div class="contenido_contenido-imagen" data-img="BIOS POST screen">
+                            <img src="imagenes/pantalla_post.webp" alt="BIOS POST screen">
+                        </div>
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                As soon as power is supplied, the CPU initializes itself and its Program counter(PC) is set to a previously established memory address. This addres points to the <strong>firmware ROM</strong> (BIOS or UEFI). The first instruction executed is the <strong>POST (Power-On Self-Test)</strong>, which is an <em>in-place</em> diagnostic that checks if the important hardware is correct:
+                            </p>
+                            <ul>
+                                <li>Testing the CPU (records, flags).</li>
+                                <li>Testing the RAM (detection and basic integrity test).</li>
+                                <li>Display output.</li>
+                                <li>Testing main buses (PCI, PCIe).</li>
+                            </ul>
+                            <p>
+                                An error in this sequence will prevent the computer from booting, it will be communicated with beeps (POST codes).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Phase 2: Firmware Initialization and Device Selection
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <div class="contenido_contenido-imagen" data-img="UEFI boot order menu">
+                            <img src="imagenes/orden_arranque.webp" alt="UEFI boot order menu">
+                        </div>
+                        <div class="contenido_contenido-texto">
+                            <p>
+                               Once the POST has been completed, the firmware initializes low-level drivers and displays the devices. Then, it checks the configuration in non-volatile memories (<strong>NVRAM</strong>, formerly CMOS) to determine the <strong>boot sequence</strong> (Boot Priority). The ordered sequence (e.g., 1. NVMe SSD, 2. USB, 3. PXE Network) tells the firmware where to look for the boot code.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Phase 3: Carga del Código de Arranque (Boot Code Loading (MBR vs. UEFI Fork))
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <div class="contenido_contenido-imagen" data-img="BIOS vs UEFI Comparison">
+                            <img src="imagenes/uefi_bios.webp" alt="BIOS vs UEFI Comparison">
+                        </div>
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                This is the point where the traditional and modern starting methods differ:
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Legacy Mode (BIOS/MBR):</strong> The BIOS reads the first logical sector (Sector 0, 512 bytes) of the <strong>Master Boot Record (MBR)</strong>. The BIOS loads these 512 bytes into a physical memory address and transfers control to the CPU. This action loads the next stage of the bootloader.
+                                </li>
+                                <li>
+                                    <strong>Current Mode (UEFI/GPT)</strong> The UEFI, acting as a mini operating system, has the ability to work with files (e.g., FAT32). It does not read a fixed sector but looks for a specific partition called GUID: the <strong>EFI System Partition (ESP)</strong>. Within the ESP, it navigates through a directory and executes an EFI file.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Phase 4: Boot Manager Execution (Stage 2)
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <div class="contenido_contenido-imagen" data-img="GRUB 2 boot manager menu">
+                            <img src="imagenes/menu_grub.webp" alt="GRUB 2 boot manager menu">
+                        </div>
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                Now we are at the stage of the main boot manager such as GRUB2, or Windows Boot Manager, which is already loaded into RAM. This software is a bit more complex:
+                            </p>
+                            <ol>
+                                <li>Interprets its own configuration file.</li>
+                                <li>Reads multiple file systems such as ext4 or NTFS.</li>
+                                <li>It has an interactive menu so the user can differentiate between different operating systems or kernels.</li>
+                                <li>Locate the kernel image and the initial RAM disk in the file system.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Phase 5: Loading the Kernel and Initial RAM Disk (initrd)
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <div class="contenido_contenido-imagen" data-img="Kernel and Initrd Loading Scheme">
+                            <img src="imagenes/initrd.webp" alt="Kernel and Initrd Loading Scheme">
+                        </div>
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                When the user selects an entry (or by default), the boot manager loads two items into RAM:
+                            </p>
+                            <ul>
+                                <li><strong>The Kernel:</strong> The operating system kernel image. It is responsible for managing memory, processes, and hardware.</li>
+                                <li><strong>The `initrd` (initial ramdisk):</strong> It is a file that contains a temporary root filesystem. Its purpose is to manage the modules and drivers that the kernel needs to <em>mount</em> the actual root filesystem (different from the one that has already been created).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li> 
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Phase 6: Kernel Initialization and Real Root Assembly
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <div class="contenido_contenido-imagen" data-img="Kernel Initialization">
+                            <img src="imagenes/mensajes_kernel.webp" alt="Kernel Initialization">
+                        </div>
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                Control of the computer passes to the kernel. It decompresses itself, initializes (configuring memory management, interrupts, etc.), and mounts the "initrd" as its temporary root system ("/") so that it can mount the real root later.
+                            </p>
+                            <p>
+                                From this temporary root, the kernel loads the "initrd" modules, detects the actual hard drive, and mounts the <em>permanent</em> root filesystem. Finally, it uses the "pivot_root" (or "switch_root") system call to discard the initrd and adopt the permanent filesystem as its new root directory.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>   
+            <li class="main_lt-elemento">
+                <div class="lt_elemento-contenido">
+                    <h3 class="elemento_contenido-titulo">
+                        Phase 7: Execution of the "init" Process (User Space)
+                    </h3>
+                    <div class="elemento_contenido-contenido">
+                        <div class="contenido_contenido-imagen" data-img="Systemd process tree">
+                            <img src="imagenes/arbol_procesos.webp" alt="Systemd process tree">
+                        </div>
+                        <div class="contenido_contenido-texto">
+                            <p>
+                                With the actual file system created, the kernel has completed its boot process. Its final task is to execute the first <strong>user-space</strong> process.
+                            </p>
+                            <p>
+                                In modern Linux systems, this is `systemd`. This process (which is <strong>no</strong> longer the kernel) becomes the parent of all system processes. It reads its own configuration and simultaneously starts the rest of the system: network files, mounting secondary file systems, and finally, the graphical environment and login system. In this way, it presents the welcome screen to the user.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>        
+        </ol>
+    </main>
+    <footer class="footer">
+        <div class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Verification
+                    </li>
+                    <li>
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Resources
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Team
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </div>
+        <hr>
+        <div class="footer_derechos">
+            © 2025 All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

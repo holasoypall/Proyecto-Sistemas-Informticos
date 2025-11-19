@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="PC Startup Project">
+    <meta name="description" content="An explication of the computer boot system: ROM, BIOS, MBR and EFI. How the device starts from power on to the operating system.">
+    <meta name="keywords" content="boot system, BIOS, ROM, MBR, EFI, computer, TIC, boot, UEFI, programming, electronics">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="en">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css"> 
+    <link rel="stylesheet" type="text/css" href="css/comparativa.css"> 
+
+    <title>Comparison</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Main Logo" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Home" class="nav_div-img">
+            <a href="index_en.html">Home</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Process Logo" class="nav_div-img">
+            <a href="proceso_en.html">Process</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="ROM Logo" class="nav_div-img">
+            <a href="rom_en.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="BIOS Logo" class="nav_div-img">
+            <a href="bios_en.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="MBR Logo" class="nav_div-img">
+            <a href="mbr_en.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="EFI Logo" class="nav_div-img">
+            <a href="efi_en.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Comparison Logo" class="nav_div-img">
+            <a href="comparativa_en.html">Comparison</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Curiosities Logo " class="nav_div-img">
+            <a href="curiosidades_en.html">Curiosities</a>
+        </div>
+    </nav>
+    <header class="header">
+        <section class="header_intro">
+            <div class="header_intro-div">
+                <h2 class="header_intro-titulo">Comparison between MBR and EFI</h2>
+                <p class="header_intro-texto"> MBR (Master Boot Record) Vs EFI (Extensible Firmware Interface) / UEFI with GPT (Unified EFI with GUID Partition Table)</p>
+            </div>
+            <br>
+      </section>
+    </header>
+
+    <table class="table_comparativa">
+    <caption class="table_title"> <h3>Comparison between EFI vs MRB</h3></caption>
+      <tr>
+        <th>Aspect</th>
+        <th>MBR</th>
+        <th>EFI/GPT</th>
+      </tr>
+      <tr>
+        <th>Boot manager location</th>
+        <td>First sector (sector 0) of the disk (512 bytes)</td>
+        <td>EFI partition independent of the rest</td>
+      </tr>
+      <tr>
+        <th>Associated Firmware Type</th>
+        <td>BIOS</td>
+        <td>UEFI</td>
+      </tr>
+      <tr>
+        <th>Partitioning method</th>
+        <td>MBR table (max. 4 primary partitions)</td>
+        <td>GPT Table (GUID Partition Table)</td>
+      </tr>
+      <tr>
+        <th>Partition identification</th>
+        <td>Based on type (hexadecimal ID)</td>
+        <td>Unique identifier (GUID) per partition</td>
+      </tr>
+      <tr>
+        <th>Maximum disk size</th>
+        <td>2 TB (due to 32-bit address limitation)</td>
+        <td>Up to 9.4 theoretical ZB (zettabytes)</td>
+      </tr>
+      <tr>
+        <th>Maximum partition size</th>
+        <td>2 TB</td>
+        <td>Less than 9.4 ZB</td>
+      </tr>
+      <tr>
+        <th>Maximum number of partitions</th>
+        <td>4 primary lines (or 3 primary lines + 1 extended line with logical lines)</td>
+        <td>128 by default (with the possibility of expanding)</td>
+      </tr>
+      <tr>
+        <th>Partition table backup</th>
+        <td>No</td>
+        <td>Yes, GPT saves a copy at the end of the disk.</td>
+      </tr>
+      <tr>
+        <th>Dual or multiple start</th>
+        <td>Limited</td>
+        <td>More flexible (multiple EFI chargers)</td>
+      </tr>
+    </table>
+    <br>
+
+    <table class="table_comparativa">
+    <caption class="table_title"> <h3>Comparison between Operating Systems</h3></caption>
+      <tr>
+        <th>Operating System</th>
+        <th>MBR support</th>
+        <th>GPT/EFI support</th>
+      </tr>
+      <tr>
+        <th>Windows (XP or earlier)</th>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <th>Windows Vista/7 (32 bits)</th>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <th>Windows 7 (64 bits)</th>
+        <td>Yes</td>
+        <td>Yes (only with UEFI)</td>
+      </tr>
+      <tr>
+        <th>Windows 8, 10, 11 </th>
+        <td>Yes</td>
+        <td>Yes, preferably with UEFI.</td>
+      </tr>
+      <tr>
+        <th>Linux (modern distributions)</th>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <th>macOS</th>
+        <td>No </td>
+        <td>Yes (GPT only)</td>
+      </tr>
+    </table>
+    <br>
+
+    <table class="table_comparativa">
+    <caption class="table_title"> <h3>Comparison between yields</h3></caption>
+      <tr>
+        <th>Features</th>
+        <th>MBR</th>
+        <th>GPT/EFI</th>
+      </tr>
+      <tr>
+        <th>Starting speed</th>
+        <td></td>
+        <td>Faster (especially with Fast Boot)</td>
+      </tr>
+      <tr>
+        <th>Error management</th>
+        <td>Manual or limited</td>
+        <td>Automatic (table/checksum backup)</td>
+      </tr>
+      <tr>
+        <th>Support for large discs</th>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <th>Fault recovery</th>
+        <td>Difficult (in case the MBR becomes corrupted)</td>
+        <td>Possible (since GPT has copy and verification)</td>
+      </tr>
+    </table>
+    <br>
+    <div class="abajo">
+      <h3 class="subtitle_comparativa"> Security: </h3>
+      <p class="text_comparativa">MBR: It lacks integrity verification, so if sector 0 is damaged or infected, the system will not boot, and it also does not support modern measures such as Secure Boot.</p>
+      <p class="text_comparativa">EFI/GPT: Uses CRC32 checksum to validate the partition table and detect errors, also supports Secure Boot and can store multiple secure boot managers on the ESP.</p>
+      <br>
+
+      <h3 class="subtitle_comparativa"> Conclusions: </h3>
+      <p class="text_comparativa">MBR remains useful for backward compatibility, especially on older computers or universal boot media (USB, recovery, etc.).</p>
+      <p class="text_comparativa">GPT/EFI is more secure, faster, and scalable, and is the current standard in all modern operating systems.</p>
+    </div>
+
+    <br>
+    <footer class="footer">
+        <div class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Verification
+                    </li>
+                    <li>
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Resources
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Team
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </div>
+        <hr>
+        <div class="footer_derechos">
+            © 2025 All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

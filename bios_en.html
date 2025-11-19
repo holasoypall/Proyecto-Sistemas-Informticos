@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="PC Startup Project">
+    <meta name="description" content="BIOS explanation: POST, configuration and boot order.">
+    <meta name="keywords" content="boot system, BIOS, ROM, MBR, EFI, computer, TIC, boot, UEFI, programming, electronics">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="en">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css"> 
+    <link rel="stylesheet" type="text/css" href="css/bios.css"> 
+
+    <title>BIOS</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Main Logo" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Home" class="nav_div-img">
+            <a href="index_en.html">Home</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Process Logo" class="nav_div-img">
+            <a href="proceso_en.html">Process</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="ROM Logo" class="nav_div-img">
+            <a href="rom_en.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="BIOS Logo" class="nav_div-img">
+            <a href="bios_en.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="MBR Logo" class="nav_div-img">
+            <a href="mbr_en.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="EFI Logo" class="nav_div-img">
+            <a href="efi_en.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Comparison Logo" class="nav_div-img">
+            <a href="comparativa_en.html">Comparison</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Curiosities Logo " class="nav_div-img">
+            <a href="curiosidades_en.html">Curiosities</a>
+        </div>
+    </nav>
+    <header class="header">
+        <section class="header_intro">
+            <div class="header_intro-div">
+                <h2 class="header_intro-titulo">What is the BIOS?</h2>
+                <p class="header_intro-texto">
+                    The BIOS, or Basic Input/Output System, is the software that first runs when a computer is turned on. It consists of a series of automated processes that verify the system components and allow the boot process to continue.  <br> Essentially, it is a sequence of execution codes stored on a chip on the motherboard that allows it to recognize which components are connected.</p>
+            </div>
+            <div class="header_intro-div">
+                <h2 class="header_intro-subtitulo">What is its function?</h2>
+                <p class="header_intro-texto">
+                    The BIOS allows all components to connect to the motherboard via software, thus establishing a link between them. Once linked, it sets the instructions that will be used until the computer is turned back on.
+                </p>
+            </div>
+        </section>
+    </header>
+    <main class="main">
+        <section class="main_conceptos">
+            <h2 class="main_conceptos-titulo">Key BIOS concepts</h2>
+            <ul class="main_conceptos-lista">
+                <li class="conceptos_li"> 
+                    <h3 class="conceptos_li-subtitulo"> POST: Power-On Self Test</h3>
+                    <p class="conceptos_li-texto">
+                        One of the functions performed by the BIOS is the POST, a series of diagnostic tests that serve to verify that the computer's hardware is functioning correctly before loading the operating system. <br>
+                        This process checks the input and output components and configures and diagnoses the hardware's status. If something goes wrong during this process, the computer will not turn on and will display an error message.<br>
+                        This process is generally not visible during most startups, but it can be activated to detect potential errors.
+                    </p>
+                </li>
+                <li class="conceptos_li">
+                    <h3 class="conceptos_li-subtitulo">BIOS Setup</h3>
+                    <p class="conceptos_li-texto">
+                        Configuring the BIOS depends on the computer; you'll need to use different keys when turning it on. This will take you to an interface, currently UEFI, a newer system that differs slightly from the BIOS but performs a similar function.
+                        Among other things, you can configure the system date and time, the boot order, security options, and more.
+                    </p>
+                </li>
+                <li class="conceptos_li">
+                    <h3 class="conceptos_li-subtitulo">Boot order</h3>
+                    <p class="conceptos_li-texto">
+                        The boot order is a configurable BIOS option that determines the order in which the devices from which the computer starts are controlled, i.e., a hard drive, a USB drive, an optical drive, etc. <br>
+                        The default UEFI order is:
+                    </p>
+                    <ul class="conceptos_li-lista">
+                        <li class="conceptos_li-item"> Operating system boot manager</li>
+                        <li class="conceptos_li-item"> USB drive</li>
+                        <li class="conceptos_li-item"> USB drive, CD or DVD</li>
+                        <li class="conceptos_li-item"> Network adapter</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="main_comparacion">
+            <ul class="main_comparacion-lista">
+                <li class="main_comparacion-li">
+                    <h3 class="main_comparacion-subtitulo"> Legacy</h3>
+                    <div class="main_comparacion-img">
+                        <img src="imagenes/legacy.webp" alt="Bios Legacy">
+                    </div>
+                    <h3 class="main_comparacion-subtitulo"> UEFI</h3>
+                    <div class="main_comparacion-img">
+                        <img src="imagenes/uefi.webp" alt="Bios UEFI">
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Verification
+                    </li>
+                    <li>
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Resources
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Team
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </div>
+        <hr>
+        <div class="footer_derechos">
+            © 2025 All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

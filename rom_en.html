@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="PC Startup Project">
+    <meta name="description" content="ROM Explanation: ROM, stages, types.">
+    <meta name="keywords" content="boot system, BIOS, ROM, MBR, EFI, computer, TIC, boot, UEFI, programming, electronics">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="en">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/rom.css">
+
+    <title>ROM</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Main Logo" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Home" class="nav_div-img">
+            <a href="index_en.html">Home</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Process Logo" class="nav_div-img">
+            <a href="proceso_en.html">Process</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="ROM Logo" class="nav_div-img">
+            <a href="rom_en.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="BIOS Logo" class="nav_div-img">
+            <a href="bios_en.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="MBR Logo" class="nav_div-img">
+            <a href="mbr_en.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="EFI Logo" class="nav_div-img">
+            <a href="efi_en.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Comparison Logo" class="nav_div-img">
+            <a href="comparativa_en.html">Comparison</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Curiosities Logo " class="nav_div-img">
+            <a href="curiosidades_en.html">Curiosities</a>
+        </div>
+    </nav>
+    <main class="main">
+        <h1 class="main_titulo">ROM: Read-Only Memory</h1>
+        <section class="main_i">
+            <p>
+                ROM stands for Read-Only Memory. It is a type of storage characterized by being non-volatile. This means that the information stored in it is not erased when you turn off the device; the data remains stored.
+                <br>
+                The essential function of ROM is to store the firmware or boot software (such as the BIOS or UEFI in a computer). This is the set of instructions that tells the hardware how to start the operating system when you turn on the computer.
+                <br>
+                We can think of ROM as the computer's permanent instruction manual.
+            </p>
+            <h3>History of the ROM</h3>
+            <ul>
+                <li>1950-60: Headed Cores (Manual)</li>
+                <li>1970 (beginnings): MROM (Factory)</li>
+                <li>1970 (finals): EPROM (UV erasable)</li>
+                <li>1980-90: EEPROM (Electrically erasable)</li>
+                <li>Actualidad: Flash Memory (Fast and flexible)</li>
+            </ul>
+            <h3 class="main_i-importante">IMPORTANT ! ! !</h3>
+            <p>
+                It is essential not to confuse ROM with <strong>RAM</strong> (Random-Access Memory).
+            </p>
+            <ul>
+                <li>
+                <strong>ROM is the "permanent brain":</strong> Stores instructions that <em>never</em> change.
+                </li>
+                <li>
+                <strong>RAM is the "temporary table":</strong> It stores programs and files you're using <em>in real time</em>. It's volatile (erased when you turn off) and is both readable and writable.
+                </li>
+            </ul>
+            <p>
+                When you turn on your computer, the CPU (the processor) is designed to do one thing: find an instruction at a specific memory address. This address points <strong>directly</strong> to the ROM chip.
+                <br>
+                The ROM takes control and sends the <strong>POST (Power-On Self-Test)</strong> to the CPU, a mini-program that checks the basic hardware to ensure it is present and functioning. If everything is okay, the ROM hands control over to the next step, which is the BIOS or UEFI.
+            </p>
+            <p>
+                Although we're talking about PC booting here, ROM is in almost every device: a microwave, a car, a printer...
+            </p>
+        </section>
+        <aside class="main_d">
+            <h3>Common Types of ROM</h3>
+            <ul>
+                <li><strong>MROM (Mask ROM): </strong> <br> The "pure" ROM. The data is written at the factory during chip manufacturing. It is impossible to modify.</li>
+                <li><strong>RPOM (Programmable ROM): </strong> <br> It is manufactured "in blank" and can be programmed only once by a user with a special device.</li>
+                <li><strong>EPROM (Erasable Programmable ROM): </strong> <br> It can be erased by exposing it to strong ultraviolet light and then reprogramming it.</li>
+                <li><strong>EEPROM (Electrically Erasable Prog. ROM): </strong> <br> The most modern one. It can be erased and reprogrammed electrically, without removing it from the circuit.</li>
+            </ul>
+        </aside>
+        <div class="main_debajo">
+            <div class="main_debajo-img">
+                <img src="imagenes/rom_esquema.webp" alt="ROM electrical schematic">
+            </div>
+            <hr>
+            <p>
+                ROM execution scheme
+            </p>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Verification
+                    </li>
+                    <li>
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Resources
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Team
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </div>
+        <hr>
+        <div class="footer_derechos">
+            © 2025 All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

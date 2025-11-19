@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="PC Startup Project">
+    <meta name="description" content="An explication of the computer boot system: ROM, BIOS, MBR and EFI. How the device starts from power on to the operating system.">
+    <meta name="keywords" content="boot system, BIOS, ROM, MBR, EFI, computer, TIC, boot, UEFI, programming, electronics">
+    <meta name="author" content="Oihan, Adrián, Pablo">
+    <meta name="creator" content="Oihan, Adrián, Pablo">
+    <meta name="language" content="en">
+
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/efi.css">
+
+    <title>EFI</title>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="nav_div">
+            <img src="logos/principal2.png" alt="Main Logo" class="nav_div-imgp">
+        </div>
+        <div class="nav_div">
+            <img src="logos/casa.png" alt="Home" class="nav_div-img">
+            <a href="index_en.html">Home</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/proceso.png" alt="Process Logo" class="nav_div-img">
+            <a href="proceso_en.html">Process</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/rom.png" alt="ROM Logo" class="nav_div-img">
+            <a href="rom_en.html">ROM</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/bios.png" alt="BIOS Logo" class="nav_div-img">
+            <a href="bios_en.html">BIOS</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/mbr.png" alt="MBR Logo" class="nav_div-img">
+            <a href="mbr_en.html">MBR</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/efi.png" alt="EFI Logo" class="nav_div-img">
+            <a href="efi_en.html">EFI</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/comparativa.png" alt="Comparison Logo" class="nav_div-img">
+            <a href="comparativa_en.html">Comparison</a>
+        </div>
+        <div class="nav_div">
+            <img src="logos/curiosidades.png" alt="Curiosities Logo " class="nav_div-img">
+            <a href="curiosidades_en.html">Curiosities</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="main_intro">
+            <div class="main_intro-div">
+                <h2 class="main_intro-titulo">Where does EFI come from?</h2>
+                <p class="main_intro-texto">EFI (Extensible Firmware Interface) is an interface between the system hardware and the operating system that was developed by Intel
+                    <span> <img src= "imagenes/intel.webp" alt = "Intel"> </span> as a replacement for the older BIOS (Basic Input/Output System). One of its main purposes is to provide a more flexible and modern environment for system booting and hardware management. </p>
+                <br>
+                <h2 class="main_intro-titulo">What does the EFI do?</h2>
+                <br>
+            </div>
+        </section>
+
+        <h3 class="main_subtitulo"> Its main functions include: </h3>
+        <ul class="main_explicacion-lista">
+            <li>
+                <p class="texto-li"> Initialize and test the hardware components when you turn on the computer.</p>
+            </li>
+            <li>
+                <p class="texto-li"> Load the operating system (Windows or Linux for example).</p>
+            </li>
+            <li>
+                <p class="texto-li"> It allows more advanced configurations than the old BIOS, supports large hard drives like GPT instead of MBR, and has a more modern and visual interface. </p>
+            </li>
+        </ul>
+        <br>
+
+        <h3 class="main_subtitulo">Some of its main features are:</h3>
+        <ul class="main_explicacion-lista">
+            <li>
+                <p class="texto-li">Its file format is FAT32 and its size ranges between 100 and 500MB.</p>
+            </li>
+            <li>
+                <p class="texto-li">Its partition type is EFI System Partition in GPT and its location varies, but it is usually found at the beginning of the disk.</p>
+            </li>
+        </ul>
+        <br>
+
+    </main>
+    <div class= "galeria">
+
+        <div class= "galeria-item" data-caption="Partitions">
+            <img src="imagenes/imagenParticiones.webp" alt="EFI partitions">
+        </div>
+        <p class="texto-img">This image is an example of the partition types, with the circled one corresponding to EFI partitions.</p>
+        <br>
+
+        <div class= "galeria-item" data-caption="partitions">
+            <img src="imagenes/imagen+particiones.webp" alt="EFI partitions">
+        </div>
+        <p class="texto-img">More examples of EFI partitions.</p>
+        <br>
+
+        <div class= "galeria-item" data-caption="UEFI">
+            <img src="imagenes/uefi2.webp" alt="UEFI Base">
+        </div>
+        <p class="texto-img">UEFI/BIOS Interface</p>
+        <br>
+
+    </div>
+    <footer class="footer">
+        <div class="footer_contenido">
+            <div class="footer_contenido-i">
+                <img src="logos/principal2.png" alt="Logo Principal">
+            </div>
+            <div class="footer_contenido-d">
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Verification
+                    </li>
+                    <li>
+                        <img src="logos/htmlver.png" alt="Logo W3C HTML" class="bloque_titulo-img">
+                        <img src="logos/cssver.png" alt="Logo W3C CSS" class="bloque_titulo-img">
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Resources
+                    </li>
+                    <li>
+                        <a href="https://es.wikipedia.org/wiki/">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ibm.com/docs/en">IBM</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.microsoft.com/es-es/">Microsoft Learn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.techtarget.com/">TechTarget</a>
+                    </li>
+                </ul>
+                <ul class="contenido_d-bloque">
+                    <li class="d_bloque-titulo">
+                        Team
+                    </li>
+                    <li>
+                        Oihan Verdial Ochoa
+                    </li>
+                    <li>   
+                        Adrián Ribera Montes
+                    </li>
+                    <li>
+                        Pablo Redondo Bardillo
+                    </li>
+                </ul>                
+            </div>
+        </div>
+        <hr>
+        <div class="footer_derechos">
+            © 2025 All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
